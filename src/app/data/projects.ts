@@ -5,12 +5,13 @@ const projects = [
     "title": "BackEnd Blog Pessoal",
     "description": "A back-end system for a blog application built using Java with Spring Boot.",
     "gitHubLink": "https://github.com/verronebrunaa/BackEnd-Blog-Pessoal",
+    "image": "/assets/pictures/Projects/BlogPessoal-Swagger.png",
   },
   {
     "id": 2,
     "slug": "front-end-generation",
     "title": "Front-End Generation",
-    "description": "A project showcasing front-end development skills with HTML, CSS, and JavaScript.",
+    "description": "Um projeto de portfólio desenvolvido durante o bootcamp da Generation Brasil, utilizando HTML, CSS e JavaScript. O projeto foi desenvolvido como parte do curso de Front-End.",
     "gitHubLink": "https://github.com/verronebrunaa/Front-End-Generation",
   },
   {
@@ -29,7 +30,7 @@ const projects = [
     "id": 4,
     "slug": "mario-jump-game",
     "title": "Mario Jump Game",
-    "description": "A fun Mario-inspired game where the character jumps, showcasing basic game development with JavaScript.",
+    "description": "Um divertido jogo inspirado no Mario em que o personagem pula, mostrando o desenvolvimento básico de jogos com JavaScript.",
     "gitHubLink": "https://github.com/verronebrunaa/Mario-Jump-Game",
     "liveLink": "https://verronebrunaa.github.io/Mario-Jump-Game/",
     "image": "/assets/pictures/Projects/MarioJump-Project.png"
@@ -37,18 +38,34 @@ const projects = [
   {
     "id": 5,
     "slug": "portfolio-basic",
-    "title": "Portfolio Basic",
-    "description": "A basic personal portfolio showcasing skills and projects.",
-    "gitHubLink": "https://github.com/verronebrunaa/portfolio-basic",
-    "liveLink": "https://verronebrunaa.github.io/portfolio-basic/",
+    "title": "Portfólio Básico - HTML e CSS",
+    "description": "Portfólio básico desenvolvido com HTML e CSS, desenvolvido para a aula de web design do curso de Engenharia da Computação na Facens.",
+    "gitHubLink": "https://github.com/verronebrunaa/pagina_pessoal_css",
+    "liveLink": "https://verronebrunaa.github.io/pagina_pessoal_css/index.html",
     "image": "/assets/pictures/Projects/PortfolioBasic-Project.png"
   },
   {
     "id": 6,
     "slug": "java",
     "title": "Java Projects",
-    "description": "A collection of various Java projects demonstrating back-end and programming concepts.",
+    "description": "Lista de exercícios de Java desenvolvidos durante o Bootcamp da Generation Brasil.",
     "gitHubLink": "https://github.com/verronebrunaa/Java",
+  },
+  {
+    "id": 7,
+    "slug": "bootstrap",
+    "title": "Bootstrap Project - Blog de Viagens",
+    "description": "Um projeto de blog de viagens criado com o Bootstrap, mostrando o design responsivo e as habilidades de front-end para o curso de Web Design da Facens.",
+    "gitHubLink": "https://github.com/verronebrunaa/Bootstrap",
+    "liveLink": "https://verronebrunaa.github.io/Bootstrap/",
+    "image": "/assets/pictures/Projects/Bootstrap-Blog.png"
+  },
+  {
+    "id": 8,
+    "slug": "Motel-API",
+    "title": "Motel API",
+    "description": "Uma API de back-end para um aplicativo de motel criado usando C# com ASP.NET Core.",
+    "gitHubLink": "https://github.com/verronebrunaa/MotelAPI",
   },
 ]
 

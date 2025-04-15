@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 const tecnologias = [
-  { name: "ReactJS", logo: "/assets/icons/react.svg" },
+  { name: "React.js", logo: "/assets/icons/react.svg" },
   { name: "Next.js", logo: "/assets/icons/nextjs.svg" },
   { name: "Tailwind CSS", logo: "/assets/icons/tailwind.svg" },
 ];
@@ -12,6 +12,7 @@ const linguagens = [
   { name: "TypeScript", logo: "/assets/icons/typescript.svg" },
   { name: "Java", logo: "/assets/icons/java.svg" },
   { name: "C#", logo: "/assets/icons/c-sharp.svg" },
+  { name: "Elixir", logo: "/assets/icons/elixir.png" },
 ];
 
 export default function TechStack() {
