@@ -1,27 +1,53 @@
-import { FaGithub, FaLinkedin, FaCodepen, FaEnvelope } from "react-icons/fa";
+"use client";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="w-full bg-gray-900 text-white text-center py-4 mt-auto">
-      <div className="flex flex-col items-center">
-        <p>© {new Date().getFullYear()} Bruna Verrone</p>
-        <div className="flex gap-4 mt-2">
-          <a href="https://github.com/verronebrunaa" target="_blank" rel="noopener noreferrer">
-            <FaGithub className="text-xl hover:text-gray-400 transition" />
+    <footer className="footer">
+      <div className="container footer-container">
+        <div className="footer-links">
+          <a
+            href="https://github.com/verronebrunaa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+            aria-label="GitHub"
+          >
+            <FaGithub size={20} />
           </a>
-          <a href="https://www.linkedin.com/in/verronebruna/" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin className="text-xl hover:text-gray-400 transition" />
+          <a
+            href="https://www.linkedin.com/in/verronebruna/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin size={20} />
           </a>
-          <a href="https://codepen.io/verronebruna" target="_blank" rel="noopener noreferrer">
-            <FaCodepen className="text-xl hover:text-gray-400 transition" />
+          <a
+            href="mailto:verronebruna@gmail.com"
+            className="footer-link"
+            aria-label="Email"
+          >
+            <MdEmail size={22} />
           </a>
-          <a href="mailto:bruna@portfolio.com" target="_blank" rel="noopener noreferrer">
-            <FaEnvelope className="text-xl hover:text-gray-400 transition" />
+          <a
+            href="https://wa.me/SEUNUMERO"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+            aria-label="WhatsApp"
+          >
+            <FaWhatsapp size={20} />
           </a>
         </div>
+
+        <p className="footer-copyright">
+          © {new Date().getFullYear()} Bruna Verrone. Todos os direitos
+          reservados.
+        </p>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

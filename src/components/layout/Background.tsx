@@ -135,16 +135,16 @@ export default function ThreeJSBackground({
     };
   }, []);
 
-  return (
-    <div className="relative w-full h-full">
-      <div
-        ref={mountRef}
-        className="fixed top-0 left-0 w-full h-full pointer-events-none"
-        style={{ zIndex: -10 }}
-      />
-      <div className="relative w-full h-full" style={{ zIndex: 10 }}>
-        {children}
-      </div>
-    </div>
+    return (
+      <div className="relative w-full h-full">
+        <div
+          ref={mountRef}
+          className="fixed top-0 left-0 w-full h-full pointer-events-none"
+          style={{ zIndex: -20 }}
+        />
+        <div className="relative w-full h-full" style={{ zIndex: 10 }}>
+          {children}
+        </div>
+      </div>    
   );
 }
