@@ -8,7 +8,7 @@ export async function generateStaticParams() {
   return projectsData.map((project) => ({ slug: project.slug }));
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default async function ProjectPage({ params }: { params: { slug: string } }) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { slug } = params;
   const project = projectsData.find((proj) => proj.slug === params.slug);
