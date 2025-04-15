@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function News() {
   return (
     <section className="experience-section">
       <div className="experience-container">
-
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -15,22 +15,28 @@ export default function News() {
           className="publications-container"
         >
           <h2 className="section-title">Notícias e Publicações</h2>
-          
+
           <div className="publications-grid">
-            {/* Card 1 - Destaque na SumUp */}
-            <motion.div 
+            <motion.div
               className="publication-card"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.2 }}
             >
               <div className="card-image">
-                {/* Substitua pela sua imagem real */}
-                <span>Imagem da Reportagem SumUp</span>
+                <Image
+                  src={"/assets/pictures/news/Sumup-WomenInTech.jpg"}
+                  width={687}
+                  height={200}
+                  alt={"Women in tech SumUp"}
+                  className="project-image"
+                />
               </div>
               <div className="card-content">
                 <h3>Destaque na SumUp</h3>
                 <p>
-                  Fui mencionada na reportagem &quot;Women in Tech Generation Brazil&quot; da SumUp, que destaca a importância da diversidade e inclusão na tecnologia.
+                  Fui mencionada na reportagem &quot;Women in Tech Generation
+                  Brazil&quot; da SumUp, que destaca a importância da
+                  diversidade e inclusão na tecnologia.
                 </p>
                 <div className="card-links">
                   <motion.a
@@ -46,23 +52,29 @@ export default function News() {
               </div>
             </motion.div>
 
-            {/* Card 2 - Projeto Acadêmico 1 */}
-            <motion.div 
+            <motion.div
               className="publication-card"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.2 }}
             >
               <div className="card-image">
-                <span>Imagem do Projeto de Iluminação</span>
+                <Image
+                  src={"/assets/pictures/news/Facens-grupoIluminação.jpg"}
+                  width={687}
+                  height={200}
+                  alt={"Women in tech SumUp"}
+                  className="project-image"
+                />
               </div>
               <div className="card-content">
                 <h3>Projeto Acadêmico Publicado</h3>
                 <p>
-                  Sistema de Manutenção de Iluminações Públicas publicado na revista Joins.
+                  Sistema de Manutenção de Iluminações Públicas publicado na
+                  revista Joins.
                 </p>
                 <div className="card-links">
                   <motion.a
-                    href="https://joins.emnuvens.com.br/joins/article/view/846"
+                    href="https://joins.emnuvens.com.br/joins/article/view/846/548"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="card-link"
@@ -74,22 +86,29 @@ export default function News() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="publication-card"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.2 }}
             >
               <div className="card-image">
-                <span>Imagem do Tijolo Ecológico</span>
+                <Image
+                  src={"/assets/pictures/news/Facens-GrupoTijolo.jpg"}
+                  width={687}
+                  height={200}
+                  alt={"Facens - Grupo Tijolo Ecológico"}
+                  className="project-image"
+                />
               </div>
               <div className="card-content">
                 <h3>Projeto Acadêmico Publicado</h3>
                 <p>
-                  Tijolo ecológico a base de fibra de coco para reaproveitamento de resíduos sólidos.
+                  Tijolo ecológico a base de fibra de coco para reaproveitamento
+                  de resíduos sólidos.
                 </p>
                 <div className="card-links">
                   <motion.a
-                    href="https://joins.emnuvens.com.br/joins/article/view/290"
+                    href="https://joins.emnuvens.com.br/joins/article/view/290/239"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="card-link"
@@ -104,5 +123,5 @@ export default function News() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
