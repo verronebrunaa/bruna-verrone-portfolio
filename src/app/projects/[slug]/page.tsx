@@ -16,9 +16,8 @@ interface Project {
   images?: (string | { src: string; alt?: string })[];
 }
 
-type ProjectPageProps = {
+type ProjectPageProps = Promise<Project> & {
   params: { slug: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
 };
 
 export const dynamicParams = false;
