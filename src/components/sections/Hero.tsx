@@ -26,6 +26,9 @@ export default function Hero() {
             desenvolvedora Front-end com foco em React, Next.js e TypeScript.
             Estou sempre buscando aprender mais e evoluir na área de tecnologia.
           </p>
+          <p className="hero-description">
+          Estou à disposição para conversar sobre projetos, colaborações ou oportunidades
+          </p>
           <div className="hero-actions">
             <a
               href="https://wa.me/+5511941779929"
@@ -34,7 +37,7 @@ export default function Hero() {
               className="hero-whatsapp-button"
             >
               <FaWhatsapp className="hero-whatsapp-icon" size={20} />
-              Contato via WhatsApp
+              Me chama no WhatsApp
             </a>
           </div>
         </motion.div>
