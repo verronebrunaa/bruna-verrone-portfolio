@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ThreeJSBackground from "@/components/layout/Background";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +19,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={inter.className}>
-          <ThreeJSBackground>
-            {children}
-          </ThreeJSBackground>
+        <ThreeJSBackground>
+          {children}
+          <SpeedInsights />
+        </ThreeJSBackground>
       </body>
     </html>
   );
