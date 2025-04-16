@@ -48,10 +48,10 @@ export default function Hero() {
           <div className="hero-avatar">
             <div className="hero-avatar-placeholder">
               <Image
-                src="/assets/pictures/Bruna-Sumup.jpg"
+                src="/assets/pictures/BrunaVerrone.jpg"
                 alt="Bruna Verrone"
                 width={400}
-                height={400}
+                height={600}
                 className="hero-avatar-image"
               />
             </div>

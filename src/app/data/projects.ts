@@ -16,7 +16,7 @@ const projects = [
   },
   {
     "id": 3,
-    "slug": "frontend-blog-pessoal",
+    "slug": "frontend-bookgram",
     "title": "Bookgram - FrontEnd Blog Pessoal",
     "description": "O projeto Bookgram é uma aplicação de blog pessoal, onde os usuários podem criar e compartilhar postagens sobre livros. Foi desenvolvido como parte do projeto final do bootcamp da Generation Brasil.",
     "gitHubLink": "https://github.com/verronebrunaa/FrontEnd-Blog-Pessoal",
@@ -37,22 +37,31 @@ const projects = [
   },
   {
     "id": 5,
-    "slug": "portfolio-basic",
-    "title": "Portfólio Básico - HTML e CSS",
-    "description": "Portfólio básico desenvolvido com HTML e CSS, desenvolvido para a aula de web design do curso de Engenharia da Computação na Facens.",
+    "slug": "pagina-pessoal",
+    "title": "Pagina Pessoal - HTML e CSS",
+    "description": "Pagina Pessoal desenvolvida com HTML e CSS, desenvolvido para a aula de web design do curso de Engenharia da Computação na Facens.",
     "gitHubLink": "https://github.com/verronebrunaa/pagina_pessoal_css",
     "liveLink": "https://verronebrunaa.github.io/pagina_pessoal_css/index.html",
-    "image": "/assets/pictures/Projects/PortfolioBasic-Project.png"
+    "image": "/assets/pictures/Projects/PaginaPessoal-Project.png"
   },
   {
     "id": 6,
+    "slug": "portfolio-basic",
+    "title": "Portfólio Básico - HTML e CSS",
+    "description": "Portfólio básico desenvolvido com HTML e CSS, para testar habilidades de front-end e o fluxo de deploy pelo GitHub.",
+    "gitHubLink": "https://github.com/verronebrunaa/portfolio-basic",
+    "liveLink": "https://verronebrunaa.github.io/portfolio-basic/",
+    "image": "/assets/pictures/Projects/PortfolioBasic-Project.png"
+  },
+  {
+    "id": 7,
     "slug": "java",
     "title": "Java Projects",
     "description": "Lista de exercícios de Java desenvolvidos durante o Bootcamp da Generation Brasil.",
     "gitHubLink": "https://github.com/verronebrunaa/Java",
   },
   {
-    "id": 7,
+    "id": 8,
     "slug": "bootstrap",
     "title": "Bootstrap Project - Blog de Viagens",
     "description": "Um projeto de blog de viagens criado com o Bootstrap, mostrando o design responsivo e as habilidades de front-end para o curso de Web Design da Facens.",
@@ -61,8 +70,8 @@ const projects = [
     "image": "/assets/pictures/Projects/Bootstrap-Blog.png"
   },
   {
-    "id": 8,
-    "slug": "Motel-API",
+    "id": 9,
+    "slug": "motel-api",
     "title": "Motel API",
     "description": "Uma API de back-end para um aplicativo de motel criado usando C# com ASP.NET Core.",
     "gitHubLink": "https://github.com/verronebrunaa/MotelAPI",

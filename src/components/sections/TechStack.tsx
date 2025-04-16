@@ -1,55 +1,68 @@
 import React from "react";
-import Image from "next/image";
+import { FaJava } from "react-icons/fa";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiElixir,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiThreedotjs,
+  SiGithub,
+  SiFigma,
+  SiPostman,
+  SiJest,
+  SiCypress,
+  SiDocker,
+  SiVercel,
+  SiMysql,
+  SiMongodb,
+} from "react-icons/si";
+import { PiFileCSharpDuotone } from "react-icons/pi";
 
 const techData = {
   linguagens: [
-    { name: "JavaScript", logo: "/assets/icons/javascript.svg" },
-    { name: "TypeScript", logo: "/assets/icons/typescript.svg" },
-    { name: "Java", logo: "/assets/icons/java.svg" },
-    { name: "C#", logo: "/assets/icons/c-sharp.svg" },
-    { name: "Elixir", logo: "/assets/icons/elixir.svg" },
+    { name: "JavaScript", icon: SiJavascript },
+    { name: "TypeScript", icon: SiTypescript },
+    { name: "Java", icon: FaJava },
+    { name: "C#", icon: PiFileCSharpDuotone},
+    { name: "Elixir", icon: SiElixir },
   ],
   frontend: [
-    { name: "React.js", logo: "/assets/icons/react.svg" },
-    { name: "Next.js", logo: "/assets/icons/nextjs.svg" },
-    { name: "Tailwind CSS", logo: "/assets/icons/tailwind.svg" },
-    { name: "Three.js", logo: "/assets/icons/threejs.svg" },
+    { name: "React.js", icon: SiReact },
+    { name: "Next.js", icon: SiNextdotjs },
+    { name: "Tailwind CSS", icon: SiTailwindcss },
+    { name: "Three.js", icon: SiThreedotjs },
   ],
   ferramentas: [
-    { name: "Git e GitHub", logo: "/assets/icons/GitHub.svg" },
-    { name: "Figma", logo: "/assets/icons/figma.svg" },
-    { name: "Postman", logo: "/assets/icons/postman.svg" },
-    { name: "Jest", logo: "/assets/icons/jest.svg" },
-    { name: "Cypress", logo: "/assets/icons/cypress.svg" },
+    { name: "Git e GitHub", icon: SiGithub },
+    { name: "Figma", icon: SiFigma },
+    { name: "Postman", icon: SiPostman },
+    { name: "Jest", icon: SiJest },
+    { name: "Cypress", icon: SiCypress },
   ],
   infra: [
-    { name: "Docker", logo: "/assets/icons/docker.svg" },
-    { name: "Vercel", logo: "/assets/icons/vercel.svg" },
-    { name: "MySQL", logo: "/assets/icons/mysql.svg" },
-    { name: "MongoDB", logo: "/assets/icons/mongodb.svg" },
+    { name: "Docker", icon: SiDocker },
+    { name: "Vercel", icon: SiVercel },
+    { name: "MySQL", icon: SiMysql },
+    { name: "MongoDB", icon: SiMongodb },
   ],
 };
 
 interface TechItemProps {
   name: string;
-  logo: string;
+  icon: React.ElementType;
 }
 
-const TechItem = ({ name, logo }: TechItemProps) => (
+const TechItem = ({ name, icon: Icon }: TechItemProps) => (
   <div className="tech-item">
     <div className="tech-icon-container">
-      <Image
-        src={logo}
-        alt={`Logo ${name}`}
-        width={48}
-        height={48}
-        className="tech-icon"
-        loading="lazy"
-      />
+      <Icon className="tech-icon text-4xl" />
     </div>
     <span className="tech-name">{name}</span>
   </div>
 );
+
 
 interface TechCategoryProps {
   title: string;
