@@ -12,7 +12,7 @@ export default function ProjectsPage() {
         <h1 className="section-title">Meus Projetos</h1>
         <ul className="projects-grid">
           {projectsData.map((project) => (
-            <li key={project.id} className="project-card">
+            <li key={project.slug} className="project-card">
               <Link href={`/projects/${project.slug}`} className="project-link">
                 <h2 className="project-title">{project.title}</h2>
                 {project.description && (

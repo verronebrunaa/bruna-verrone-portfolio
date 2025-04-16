@@ -4,9 +4,7 @@ import ProjectClient from "@/components/sections/Project";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface Project {
-  id: number;
   slug: string;
   title: string;
   description: string;
@@ -20,33 +18,28 @@ export const dynamicParams = false;
 
 export function generateStaticParams() {
   return projectsData.map((project) => ({
-    slug: project.slug
+    slug: project.slug,
   }));
 }
 
-// Corrigido: Adicionado async/await mesmo para dados locais
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  // Adicionado await para compatibilidade com Next.js 15
-  const { slug } = await Promise.resolve(params);
-  const project = projectsData.find((p) => p.slug === slug);
+export default async function ProjectPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = params;
 
-  return {
-    title: project?.title ?? "Projeto não encontrado",
-    description: project?.description,
-  };
-}
+  const project = projectsData.find((p) => p.slug === slug) as
+    | Project
+    | undefined;
 
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
-  const { slug } = await Promise.resolve(params);
-  const project = projectsData.find((p) => p.slug === slug);
-  
   if (!project) {
     notFound();
   }
 
   const normalizeImage = (img: string | { src: string; alt?: string }) => {
-    return typeof img === 'string' 
-      ? { src: img, alt: project.title } 
+    return typeof img === "string"
+      ? { src: img, alt: project.title }
       : { ...img, alt: img.alt ?? project.title };
   };
 
