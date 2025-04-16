@@ -65,6 +65,7 @@ body {
   display: flex;
   gap: 1.5rem;
 }
+
 .header-link {
   text-decoration: none;
   color: var(--text-primary);
@@ -236,8 +237,13 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .slide-up {
@@ -249,6 +255,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -257,7 +264,8 @@ body {
 
 /* Footer */
 .footer {
-  background: rgba(15, 23, 42, 0.8); /* Cor escura com 80% de opacidade */
+  background: rgba(15, 23, 42, 0.8);
+  /* Cor escura com 80% de opacidade */
   color: white;
   padding: 2rem 0;
   text-align: center;
@@ -291,38 +299,6 @@ body {
   margin-top: 1rem;
 }
 
-/* Adicione estas classes */
-.theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease;
-}
-
-.theme-toggle:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.theme-toggle svg {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-.theme-toggle .sun-icon {
-  color: #f59e0b; /* amarelo para o sol */
-}
-
-.theme-toggle .moon-icon {
-  color: #e5e7eb; /* cinza claro para a lua */
-}
-
 /* Estilos gerais da seção Experience */
 .experience-section {
   padding: 80px 0;
@@ -335,32 +311,18 @@ body {
   padding: 0 20px;
 }
 
-/* Títulos principais */
-.section-title {
-  font-size: 2.25rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-/* Estilos para a seção de experiência */
-.experience-section {
-  padding: 5rem 0;
-  background-color: white;
-}
-
-.experience-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: #333;
+  color: #1f2937;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3rem;
+  }
 }
 
 /* Card de experiência */
@@ -478,12 +440,12 @@ body {
   .experience-content-wrapper {
     flex-direction: column;
   }
-  
+
   .carousel-wrapper {
     width: 100%;
     margin-top: 1.5rem;
   }
-  
+
   .carousel-container {
     height: 200px;
   }
@@ -492,13 +454,19 @@ body {
 /* Seção de Notícias e Publicações - Cards */
 .publications-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; 
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1024px) {
   .publications-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .publications-grid {
+    grid-template-columns: 1fr; 
   }
 }
 
@@ -509,6 +477,9 @@ body {
   border: 1px solid #e5e7eb;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .publication-card:hover {
@@ -523,6 +494,7 @@ body {
   align-items: center;
   justify-content: center;
   color: #6b7280;
+  flex-shrink: 0;
 }
 
 .card-content {
@@ -530,6 +502,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-grow: 1;
 }
 
 .card-content h3 {
@@ -547,7 +520,9 @@ body {
 .card-links {
   display: flex;
   gap: 1rem;
+  margin-top: auto;
 }
+
 
 .card-link {
   color: #2563eb;
@@ -583,14 +558,6 @@ body {
   padding: 2rem;
 }
 
-.projects-title {
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #1f2937;
-}
-
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -617,11 +584,6 @@ body {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-.project-link {
-  text-decoration: none;
-  color: inherit;
-}
-
 .project-title {
   font-size: 1.25rem;
   font-weight: 600;
@@ -641,7 +603,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f9fafb;
+  background: linear-gradient(to right, #faf5ff, #f0f9ff);
 }
 
 .project-container {
@@ -742,18 +704,18 @@ body {
 }
 
 /* Links do projeto */
-.project-links {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
 .project-link {
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .project-link.github {
@@ -776,17 +738,18 @@ body {
 
 /* Responsividade */
 @media (max-width: 768px) {
+
   .project-image-container,
   .project-carousel {
     height: 300px;
     width: 100%;
   }
-  
+
   .project-links {
     flex-direction: column;
     gap: 0.75rem;
   }
-  
+
   .project-link {
     width: 100%;
     text-align: center;
@@ -800,12 +763,27 @@ body {
   z-index: 10;
 }
 
+.tech-stack-title {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1f2937;
+}
+
+@media (min-width: 768px) {
+  .tech-stack-title {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
 .tech-stack-grid {
   position: relative;
   z-index: 10;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -816,41 +794,30 @@ body {
 }
 
 .tech-card {
-  background-color: white;
   padding: 1.5rem;
+  background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.tech-card-title {
-  font-size: 1.5rem;
+.tech-category {
+  font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  color: #374151;
+  margin-bottom: 1rem;
 }
 
-@media (min-width: 768px) {
-  .tech-card-title {
-    text-align: left;
-  }
+.tech-category-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
 }
 
 .tech-items-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
-}
-
-.lang-items-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-@media (min-width: 640px) {
-  .lang-items-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .tech-item {
@@ -860,7 +827,7 @@ body {
 }
 
 .tech-icon-container {
-  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .tech-icon {

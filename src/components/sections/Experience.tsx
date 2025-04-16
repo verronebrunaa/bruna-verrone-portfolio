@@ -9,7 +9,7 @@ export default function Experience() {
   const experiences = [
     {
       company: "Codako | Grupo Amazonas",
-      period: "04/2022 - 01/2024",
+      period: "05/2024 - 12/2024",
       position: "Desenvolvedora Front-end",
       description:
         "A Codako é um projeto de Startup do Grupo Amazonas, atuei como desenvolvedora front-end contribuindo para o desenvolvimento de soluções inovadoras e eficientes. Minha experiência inclui a criação de interfaces de usuário responsivas e intuitivas, utilizando tecnologias modernas como React e Next.js. Na Codako pude participar da entrega de projetos como: Consulta de Placas, desenvolvimento de um CMS, Site das Marcas e do Grupo Amazonas. Além disso, participei ativamente de reuniões de equipe e colaborei com a organização do inicio do projeto Codako.",

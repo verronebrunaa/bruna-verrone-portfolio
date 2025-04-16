@@ -9,7 +9,7 @@ export default function ProjectsPage() {
     <Header />
     <div className="projects-page">
       <div className="projects-container">
-        <h1 className="projects-title">Meus Projetos</h1>
+        <h1 className="section-title">Meus Projetos</h1>
         <ul className="projects-grid">
           {projectsData.map((project) => (
             <li key={project.id} className="project-card">
