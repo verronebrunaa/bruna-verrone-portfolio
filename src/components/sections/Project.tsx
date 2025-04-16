@@ -11,13 +11,15 @@ interface ProjectImage {
 
 interface ProjectProps {
   project: {
+    slug: string;
     title: string;
     description: string;
+    gitHubLink?: string;
+    liveLink?: string;
     images: ProjectImage[];
     hasGitHubLink: boolean;
     hasLiveLink: boolean;
-    gitHubLink?: string;
-    liveLink?: string;
+
   };
 }
 

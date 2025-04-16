@@ -4,7 +4,7 @@ const projects = [
     "title": "BackEnd Blog Pessoal",
     "description": "A back-end system for a blog application built using Java with Spring Boot.",
     "gitHubLink": "https://github.com/verronebrunaa/BackEnd-Blog-Pessoal",
-    "image": "/assets/pictures/Projects/BlogPessoal-Swagger.png",
+    "images": "/assets/pictures/Projects/BlogPessoal-Swagger.png",
   },
   {
     "slug": "front-end-generation",
@@ -29,7 +29,7 @@ const projects = [
     "description": "Um divertido jogo inspirado no Mario em que o personagem pula, mostrando o desenvolvimento básico de jogos com JavaScript.",
     "gitHubLink": "https://github.com/verronebrunaa/Mario-Jump-Game",
     "liveLink": "https://verronebrunaa.github.io/Mario-Jump-Game/",
-    "image": "/assets/pictures/Projects/MarioJump-Project.png"
+    "images": "/assets/pictures/Projects/MarioJump-Project.png"
   },
   {
     "slug": "portfolio-basic",
@@ -37,7 +37,7 @@ const projects = [
     "description": "Portfólio básico desenvolvido com HTML e CSS, desenvolvido para a aula de web design do curso de Engenharia da Computação na Facens.",
     "gitHubLink": "https://github.com/verronebrunaa/pagina_pessoal_css",
     "liveLink": "https://verronebrunaa.github.io/pagina_pessoal_css/index.html",
-    "image": "/assets/pictures/Projects/PortfolioBasic-Project.png"
+    "images": "/assets/pictures/Projects/PortfolioBasic-Project.png"
   },
   {
     "slug": "java",
@@ -51,7 +51,7 @@ const projects = [
     "description": "Um projeto de blog de viagens criado com o Bootstrap, mostrando o design responsivo e as habilidades de front-end para o curso de Web Design da Facens.",
     "gitHubLink": "https://github.com/verronebrunaa/Bootstrap",
     "liveLink": "https://verronebrunaa.github.io/Bootstrap/",
-    "image": "/assets/pictures/Projects/Bootstrap-Blog.png"
+    "images": "/assets/pictures/Projects/Bootstrap-Blog.png"
   },
   {
     "slug": "Motel-API",
