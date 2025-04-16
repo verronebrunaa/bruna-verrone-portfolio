@@ -24,7 +24,7 @@ export default function News() {
             >
               <div className="card-image">
                 <Image
-                  src={"/assets/pictures/news/Sumup-WomenInTech.jpg"}
+                  src={"/assets/pictures/news/women-tech-generation-brazil-sumup.avif"}
                   width={687}
                   height={200}
                   alt={"Women in tech SumUp"}
