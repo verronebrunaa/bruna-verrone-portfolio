@@ -4,34 +4,23 @@ import ProjectClient from "@/components/sections/Project";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-interface Project {
-  slug: string;
-  title: string;
-  description: string;
-  gitHubLink?: string;
-  liveLink?: string;
-  image?: string;
-  images?: (string | { src: string; alt?: string })[];
-}
-
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return projectsData.map((project) => ({
-    slug: project.slug,
+    id: project.slug,
   }));
 }
 
+// Remova qualquer interface customizada e use esta sintaxe
 export default async function ProjectPage({
   params,
 }: {
-  params: { slug: string };
-}) {
-  const { slug } = params;
+  params: { id: string };
+} & Record<string, never>) { // O & Record<string, never> ajuda a evitar conflitos
+  const { id } = params;
 
-  const project = projectsData.find((p) => p.slug === slug) as
-    | Project
-    | undefined;
+  const project = projectsData.find((p) => p.slug === id);
 
   if (!project) {
     notFound();

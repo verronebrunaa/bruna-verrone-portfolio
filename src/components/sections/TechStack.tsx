@@ -7,7 +7,7 @@ const techData = {
     { name: "TypeScript", logo: "/assets/icons/typescript.svg" },
     { name: "Java", logo: "/assets/icons/java.svg" },
     { name: "C#", logo: "/assets/icons/c-sharp.svg" },
-    { name: "Elixir", logo: "/assets/icons/elixir.png" },
+    { name: "Elixir", logo: "/assets/icons/elixir.svg" },
   ],
   frontend: [
     { name: "React.js", logo: "/assets/icons/react.svg" },
