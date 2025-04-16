@@ -4,31 +4,68 @@ import ProjectClient from "@/components/sections/Project";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-export async function generateStaticParams() {
-  return projectsData.map((project) => ({ slug: project.slug }));
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+interface Project {
+  id: number;
+  slug: string;
+  title: string;
+  description: string;
+  gitHubLink?: string;
+  liveLink?: string;
+  image?: string;
+  images?: (string | { src: string; alt?: string })[];
 }
 
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { slug } = params;
-  const project = projectsData.find((proj) => proj.slug === params.slug);
-  if (!project) return notFound();
+interface ProjectPageProps {
+  params: {
+    slug: string;
+  };
+}
 
-  const projectImages = project.images 
-    ? project.images.map(img => typeof img === 'string' ? { src: img, alt: project.title } : img)
-    : project.image 
-    ? [{ src: project.image, alt: project.title }]
+export const dynamicParams = false; // Opcional: controla comportamento de rotas não geradas
+
+export function generateStaticParams() {
+  return projectsData.map((project) => ({
+    slug: project.slug
+  }));
+}
+
+export function generateMetadata({ params }: ProjectPageProps) {
+  const project = projectsData.find((p) => p.slug === params.slug);
+  return {
+    title: project?.title || "Projeto não encontrado",
+    description: project?.description,
+  };
+}
+
+export default function ProjectPage({ params }: ProjectPageProps) {
+  const project = projectsData.find((p) => p.slug === params.slug);
+  
+  if (!project) {
+    notFound();
+  }
+
+  const normalizeImage = (img: string | { src: string; alt?: string }) => {
+    return typeof img === 'string' 
+      ? { src: img, alt: project.title } 
+      : { ...img, alt: img.alt || project.title };
+  };
+
+  const projectImages = project.images
+    ? project.images.map(normalizeImage)
+    : project.image
+    ? [normalizeImage(project.image)]
     : [];
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <ProjectClient 
+      <ProjectClient
         project={{
           ...project,
           images: projectImages,
           hasGitHubLink: !!project.gitHubLink,
-          hasLiveLink: !!project.liveLink
+          hasLiveLink: !!project.liveLink,
         }}
       />
       <Footer />
