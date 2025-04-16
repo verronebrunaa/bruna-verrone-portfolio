@@ -16,10 +16,6 @@ interface Project {
   images?: (string | { src: string; alt?: string })[];
 }
 
-type ProjectPageProps = Promise<Project> & {
-  params: { slug: string };
-};
-
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -28,16 +24,21 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = projectsData.find((p) => p.slug === params.slug);
+// Corrigido: Adicionado async/await mesmo para dados locais
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  // Adicionado await para compatibilidade com Next.js 15
+  const { slug } = await Promise.resolve(params);
+  const project = projectsData.find((p) => p.slug === slug);
+
   return {
     title: project?.title ?? "Projeto não encontrado",
     description: project?.description,
   };
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projectsData.find((p) => p.slug === params.slug);
+export default async function ProjectPage({ params }: { params: { slug: string } }) {
+  const { slug } = await Promise.resolve(params);
+  const project = projectsData.find((p) => p.slug === slug);
   
   if (!project) {
     notFound();
