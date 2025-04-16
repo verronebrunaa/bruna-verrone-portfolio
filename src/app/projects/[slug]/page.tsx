@@ -16,13 +16,12 @@ interface Project {
   images?: (string | { src: string; alt?: string })[];
 }
 
-interface ProjectPageProps {
-  params: {
-    slug: string;
-  };
-}
+type ProjectPageProps = {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
 
-export const dynamicParams = false; // Opcional: controla comportamento de rotas não geradas
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return projectsData.map((project) => ({
@@ -30,10 +29,10 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: ProjectPageProps) {
+export function generateMetadata({ params }: { params: { slug: string } }) {
   const project = projectsData.find((p) => p.slug === params.slug);
   return {
-    title: project?.title || "Projeto não encontrado",
+    title: project?.title ?? "Projeto não encontrado",
     description: project?.description,
   };
 }
@@ -48,7 +47,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const normalizeImage = (img: string | { src: string; alt?: string }) => {
     return typeof img === 'string' 
       ? { src: img, alt: project.title } 
-      : { ...img, alt: img.alt || project.title };
+      : { ...img, alt: img.alt ?? project.title };
   };
 
   const projectImages = project.images
