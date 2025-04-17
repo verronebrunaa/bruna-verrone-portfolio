@@ -1,4 +1,4 @@
-import projectsData from "@/app/data/projects";
+import { projectsData } from "@/data/projects";
 import { notFound } from "next/navigation";
 import ProjectClient from "@/components/sections/Project";
 import Header from "@/components/layout/Header";
@@ -12,12 +12,11 @@ export function generateStaticParams() {
   }));
 }
 
-// Remova qualquer interface customizada e use esta sintaxe
 export default async function ProjectPage({
   params,
 }: {
   params: { id: string };
-} & Record<string, never>) { // O & Record<string, never> ajuda a evitar conflitos
+} & Record<string, never>) {
   const { id } = params;
 
   const project = projectsData.find((p) => p.slug === id);
@@ -28,27 +27,16 @@ export default async function ProjectPage({
 
   const normalizeImage = (img: string | { src: string; alt?: string }) => {
     return typeof img === "string"
-      ? { src: img, alt: project.title }
+      ? img 
       : { ...img, alt: img.alt ?? project.title };
   };
-
-  const projectImages = project.images
-    ? project.images.map(normalizeImage)
-    : project.image
-    ? [normalizeImage(project.image)]
-    : [];
+  
+  const projectImages = project.images?.map(normalizeImage) || [];
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <ProjectClient
-        project={{
-          ...project,
-          images: projectImages,
-          hasGitHubLink: !!project.gitHubLink,
-          hasLiveLink: !!project.liveLink,
-        }}
-      />
+      <ProjectClient project={{ ...project, images: projectImages }} />
       <Footer />
     </div>
   );

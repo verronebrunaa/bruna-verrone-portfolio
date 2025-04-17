@@ -73,6 +73,15 @@ body {
   transition: color 0.3s;
 }
 
+@media (max-width: 768px) {
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
+
 .social-icons {
   display: flex;
   gap: 1rem;
@@ -218,6 +227,12 @@ body {
 .hero-actions {
   display: flex;
   gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-actions {
+    gap: 2rem;
+  }
 }
 
 .hero-whatsapp-button {
@@ -898,6 +913,7 @@ body {
 
 .tech-icon:hover {
   transform: scale(1.1);
+  color:#7c3aed;
 }
 
 .tech-name {

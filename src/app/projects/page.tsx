@@ -1,5 +1,5 @@
 import Link from "next/link";
-import projectsData from "@/app/data/projects";
+import {projectsData} from "@/data/projects";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
