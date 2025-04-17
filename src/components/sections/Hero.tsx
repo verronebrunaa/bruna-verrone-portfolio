@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 import TechStack from "./TechStack";
 import Image from "next/image";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
@@ -16,18 +17,31 @@ export default function Hero() {
           className="hero-content"
         >
           <h1 className="hero-title">
-            Olá, eu sou <span style={{ color: "#9333ea" }}>Bruna Verrone</span>
+            Olá, eu sou
+            <br />
+            <span style={{ color: "#9333ea" }}>Bruna Verrone</span>
           </h1>
-          <h2 className="hero-subtitle">Desenvolvedora Front-end</h2>
+          <TypeAnimation
+            sequence={[
+              "Desenvolvedora Full Stack",
+              2000,
+              "com foco em Front-end",
+              2000,
+            ]}
+            wrapper="span"
+            className="hero-subtitle"
+            repeat={Infinity}
+          />
           <p className="hero-description">
-            Apaixonada por tecnologia e movida por desafios.
-            Tenho 25 anos, sou formada em Comércio Exterior e atualmente curso
-            Engenharia da Computação na Facens (Sorocaba). Atuo como
-            desenvolvedora Front-end com foco em React, Next.js e TypeScript.
-            Estou sempre buscando aprender mais e evoluir na área de tecnologia.
+            Apaixonada por tecnologia e movida por desafios. Tenho 25 anos, sou
+            formada em Comércio Exterior e atualmente curso Engenharia da
+            Computação na Facens em Sorocaba. Sou uma desenvolvedora Full Stack
+            com foco em Front-end. Estou sempre buscando
+            aprender mais e evoluir na área de tecnologia.
           </p>
           <p className="hero-description">
-          Estou à disposição para conversar sobre projetos, colaborações ou oportunidades
+            Estou à disposição para conversar sobre projetos, colaborações ou
+            oportunidades
           </p>
           <div className="hero-actions">
             <a
