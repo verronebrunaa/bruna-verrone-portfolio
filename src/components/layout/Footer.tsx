@@ -33,7 +33,7 @@ export default function Footer() {
             <MdEmail size={22} />
           </a>
           <a
-            href="https://wa.me/SEUNUMERO"
+            href="https://wa.me/+5511941779929"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-link"
@@ -44,8 +44,8 @@ export default function Footer() {
         </div>
 
         <p className="footer-copyright">
-          © {new Date().getFullYear()} Bruna Verrone. Todos os direitos
-          reservados.
+          Desenvolvido com ❤️ por <strong>Bruna Verrone</strong>
+          <br />© {new Date().getFullYear()} - Todos os direitos reservados.
         </p>
       </div>
     </footer>

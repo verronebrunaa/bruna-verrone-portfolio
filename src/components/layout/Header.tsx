@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container header-container">
-        <div className="flex items-center justify-between w-full">
+        <div className="header-content">
           <Link href="/" className="header-home-link">
             <h1 className="header-title">&lt;Bruna Verrone/&gt;</h1>
             <p className="header-subtitle">Front-end Developer</p>
