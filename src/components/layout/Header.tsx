@@ -32,6 +32,9 @@ export default function Header() {
           <Link href="/experience" className="header-link">
             Experiência
           </Link>
+          <Link href="/courses" className="header-link">
+            Cursos
+          </Link>
           <Link href="/news" className="header-link">
             Notícias e Publicações
           </Link>
