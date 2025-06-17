@@ -6,5 +6,6 @@ export interface Project {
     gitHubLink: string;
     liveLink?: string;
     images?: string[];
+    tags?: string[];
   }
   
