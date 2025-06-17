@@ -155,7 +155,6 @@ body {
   }
 }
 
-
 /* Estilos para a seção Hero */
 .hero-section {
   padding: 5rem 0;
@@ -921,4 +920,28 @@ body {
   color: #374151;
   margin-top: 0.5rem;
   text-align: center;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.project-tag {
+  background-color: #e2e8f0;
+  color: #1e293b;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.project-tag:hover {
+  background-color: #7c3aed;
+  color: #faf5ff;
 }
