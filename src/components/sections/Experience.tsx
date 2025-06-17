@@ -83,18 +83,22 @@ export default function Experience() {
                       ))}
                     </div>
 
-                    <button
-                      className="carousel-btn prev"
-                      onClick={() => prevSlide(index)}
-                    >
-                      <GrCaretPrevious />
-                    </button>
-                    <button
-                      className="carousel-btn next"
-                      onClick={() => nextSlide(index)}
-                    >
-                      <GrCaretNext />
-                    </button>
+                    {exp.images.length > 1 && (
+                      <>
+                        <button
+                          className="carousel-btn prev"
+                          onClick={() => prevSlide(index)}
+                        >
+                          <GrCaretPrevious />
+                        </button>
+                        <button
+                          className="carousel-btn next"
+                          onClick={() => nextSlide(index)}
+                        >
+                          <GrCaretNext />
+                        </button>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>

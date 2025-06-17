@@ -13,7 +13,7 @@ export default function Header() {
         <div className="header-content">
           <Link href="/" className="header-home-link">
             <h1 className="header-title">&lt;Bruna Verrone/&gt;</h1>
-            <p className="header-subtitle">Front-end Developer</p>
+            <p className="header-subtitle">Desenvolvedora Full Stack</p>
           </Link>
 
           <button

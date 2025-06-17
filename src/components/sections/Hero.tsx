@@ -35,9 +35,8 @@ export default function Hero() {
           <p className="hero-description">
             Apaixonada por tecnologia e movida por desafios. Tenho 25 anos, sou
             formada em Comércio Exterior e atualmente curso Engenharia da
-            Computação na Facens em Sorocaba. Sou uma desenvolvedora Full Stack
-            com foco em Front-end. Estou sempre buscando
-            aprender mais e evoluir na área de tecnologia.
+            Computação na Facens em Sorocaba. Estou sempre buscando aprender
+            mais e evoluir na área de tecnologia.
           </p>
           <p className="hero-description">
             Estou à disposição para conversar sobre projetos, colaborações ou
