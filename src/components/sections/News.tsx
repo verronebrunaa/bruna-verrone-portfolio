@@ -32,7 +32,7 @@ export default function News() {
                 />
               </div>
               <div className="card-content">
-                <h3>Destaque na SumUp</h3>
+                <h3>Destaque na SumUp - Mulher em Tech</h3>
                 <p>
                   Fui mencionada na reportagem &quot;Women in Tech Generation
                   Brazil&quot; da SumUp, que destaca a importância da
@@ -67,7 +67,7 @@ export default function News() {
                 />
               </div>
               <div className="card-content">
-                <h3>Projeto Acadêmico Publicado</h3>
+                <h3>Projeto Acadêmico - Sistema de Manutenção de Iluminações Públicas</h3>
                 <p>
                   Sistema de Manutenção de Iluminações Públicas publicado na
                   revista Joins.
@@ -101,7 +101,7 @@ export default function News() {
                 />
               </div>
               <div className="card-content">
-                <h3>Projeto Acadêmico Publicado</h3>
+                <h3>Projeto Acadêmico - Tijolo ecológico a base de fibra de coco</h3>
                 <p>
                   Tijolo ecológico a base de fibra de coco para reaproveitamento
                   de resíduos sólidos.
