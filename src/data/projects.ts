@@ -68,7 +68,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 7,
-    slug: "java",
+    slug: "java-estudos",
     title: "Estudos em Java - Generation Brasil",
     description:
       "Lista de exercícios de Java desenvolvidos durante o Bootcamp da Generation Brasil.",

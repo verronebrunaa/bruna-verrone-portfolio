@@ -6,7 +6,7 @@ export const experiences: Experience[] = [
     period: "05/2025 - atualmente",
     position: "Desenvolvedora Front-end",
     description:
-      "A Liv Energy nasce da fusão de duas empresas: Wattsfy e Sunrent, ambas empresas que atuam no setor de energia renovável. Contribuo para o desenvolvimento tecnico da plataforma nova da Liv Energy, com foco em soluções de software envolvendo automação, OCR, inteligência artificial, API e integrações de CRM. Também apoio a análise e a otimização de processos operacionais para melhorar a integração, o atendimento ao cliente e o desempenho do sistema.",
+      "A Liv Energy nasce da fusão de duas empresas: Wattsfy e Sunrent, ambas empresas que atuam no setor de energia renovável. Contribuo para o desenvolvimento técnico da plataforma nova da Liv Energy, com foco em soluções de software envolvendo automação, OCR, inteligência artificial, API e integrações de CRM. Também apoio a análise e a otimização de processos operacionais para melhorar a integração, o atendimento ao cliente e o desempenho do sistema.",
     images: [
       {
         src: "/assets/pictures/experience/LivEnergy.jpg",
