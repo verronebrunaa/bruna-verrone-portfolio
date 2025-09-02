@@ -1,5 +1,5 @@
 "use client";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 export default function Footer() {
@@ -40,6 +40,15 @@ export default function Footer() {
             aria-label="WhatsApp"
           >
             <FaWhatsapp size={20} />
+          </a>
+          <a
+            href="https://www.instagram.com/verronebru/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+            aria-label="Instagram"
+          >
+            <FaInstagram size={20} />
           </a>
         </div>
 
