@@ -2,9 +2,18 @@ import { Experience } from "@/types/experience";
 
 export const experiences: Experience[] = [
   {
+    company: "Odd Data & Design Studio",
+    period: "09/2025 - Atualmente",
+    position: "Estágiaria de Desenvolvimento",
+    type: "PJ - Remoto",
+    description:
+      "Atuo como desenvolvedora Full Stack na Odd Data & Design Studio, contribuindo para projetos de design e desenvolvimento de software.",
+  },
+  {
     company: "Liv Energy | Wattsfy | Sunrent",
-    period: "05/2025 - atualmente",
-    position: "Desenvolvedora Front-end",
+    period: "05/2025 - 09/2025",
+    position: "Estágiaria de Desenvolvimento",
+    type: "Estágio",
     description:
       "A Liv Energy nasce da fusão de duas empresas: Wattsfy e Sunrent, ambas empresas que atuam no setor de energia renovável. Contribuo para o desenvolvimento técnico da plataforma nova da Liv Energy, com foco em soluções de software envolvendo automação, OCR, inteligência artificial, API e integrações de CRM. Também apoio a análise e a otimização de processos operacionais para melhorar a integração, o atendimento ao cliente e o desempenho do sistema.",
     images: [
@@ -18,6 +27,7 @@ export const experiences: Experience[] = [
     company: "Codako | Grupo Amazonas",
     period: "05/2024 - 12/2024",
     position: "Desenvolvedora Front-end",
+    type: "PJ - híbrido",
     description:
       "A Codako é um projeto de Startup do Grupo Amazonas. Atuei como desenvolvedora front-end contribuindo para o desenvolvimento de soluções inovadoras e eficientes. Minha experiência inclui a criação de interfaces de usuário responsivas e intuitivas, utilizando tecnologias modernas como React e Next.js. Na Codako, participei da entrega de projetos como: Consulta de Placas, desenvolvimento de um CMS, site das Marcas e do Grupo Amazonas. Além disso, participei ativamente de reuniões de equipe e colaborei com a organização do início do projeto Codako.",
     images: [
@@ -31,6 +41,7 @@ export const experiences: Experience[] = [
     company: "Sumup Bank",
     period: "04/2022 - 01/2024",
     position: "Desenvolvedora Generation",
+    type: "CLT - Remoto",
     description:
       "Após concluir o bootcamp da Generation, fui uma das 11 pessoas da minha turma selecionadas para integrar o time de Engenharia e Tecnologia da SumUp. Durante meu tempo na empresa, desenvolvi habilidades no front-end e tive a oportunidade de aprender um pouco sobre back-end com Elixir. Participei de palestras, de dois hackathons internos e da HackWeek — uma imersão de uma semana realizada em 2023, na Bulgária.",
     images: [

@@ -13,7 +13,7 @@ export default function Experience() {
     setCurrentSlides((prev) => {
       const newSlides = [...prev];
       newSlides[index] =
-        newSlides[index] === experiences[index].images.length - 1
+        newSlides[index] === (experiences[index].images?.length ?? 0) - 1
           ? 0
           : newSlides[index] + 1;
       return newSlides;
@@ -25,7 +25,7 @@ export default function Experience() {
       const newSlides = [...prev];
       newSlides[index] =
         newSlides[index] === 0
-          ? experiences[index].images.length - 1
+          ? (experiences[index].images?.length ?? 0) - 1
           : newSlides[index] - 1;
       return newSlides;
     });
@@ -47,6 +47,7 @@ export default function Experience() {
               <div className="experience-card-header">
                 <h3>{exp.company}</h3>
                 <p className="data">{exp.period}</p>
+                <p className="type">{exp.type}</p>
               </div>
               <p className="company">{exp.position}</p>
 
@@ -61,46 +62,46 @@ export default function Experience() {
                   <p className="description">{exp.description}</p>
                 </motion.div>
 
-                <div className="carousel-wrapper">
-                  <div className="carousel-container">
-                    <div
-                      className="carousel-slide"
-                      style={{
-                        transform: `translateX(-${
-                          currentSlides[index] * 100
-                        }%)`,
-                      }}
-                    >
-                      {exp.images.map((img, imgIndex) => (
-                        <Image
-                          key={imgIndex}
-                          src={img.src}
-                          alt={img.alt}
-                          width={400}
-                          height={250}
-                          className="carousel-image"
-                        />
-                      ))}
-                    </div>
+                {exp.images && exp.images.length > 0 && (
+                  <div className="carousel-wrapper">
+                    <div className="carousel-container">
+                      <div
+                        className="carousel-slide"
+                        style={{
+                          transform: `translateX(-${currentSlides[index] * 100}%)`,
+                        }}
+                      >
+                        {exp.images.map((img, imgIndex) => (
+                          <Image
+                            key={imgIndex}
+                            src={img.src}
+                            alt={img.alt}
+                            width={400}
+                            height={250}
+                            className="carousel-image"
+                          />
+                        ))}
+                      </div>
 
-                    {exp.images.length > 1 && (
-                      <>
-                        <button
-                          className="carousel-btn prev"
-                          onClick={() => prevSlide(index)}
-                        >
-                          <GrCaretPrevious />
-                        </button>
-                        <button
-                          className="carousel-btn next"
-                          onClick={() => nextSlide(index)}
-                        >
-                          <GrCaretNext />
-                        </button>
-                      </>
-                    )}
+                      {exp.images.length > 1 && (
+                        <>
+                          <button
+                            className="carousel-btn prev"
+                            onClick={() => prevSlide(index)}
+                          >
+                            <GrCaretPrevious />
+                          </button>
+                          <button
+                            className="carousel-btn next"
+                            onClick={() => nextSlide(index)}
+                          >
+                            <GrCaretNext />
+                          </button>
+                        </>
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           ))}

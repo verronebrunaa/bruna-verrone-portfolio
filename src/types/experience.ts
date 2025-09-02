@@ -7,6 +7,7 @@ export interface Experience {
   company: string;
   period: string;
   position: string;
+  type: string;
   description: string;
-  images: ExperienceImage[];
+  images?: ExperienceImage[];
 }
