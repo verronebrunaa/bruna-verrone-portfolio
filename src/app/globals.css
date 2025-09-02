@@ -6,7 +6,6 @@
   --accent-color: #7c3aed;
 }
 
-/* Reset e base */
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +19,6 @@ body {
   line-height: 1.6;
 }
 
-/* Container */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -28,7 +26,6 @@ body {
   padding: 0 1.5rem;
 }
 
-/* Header */
 .header {
   position: sticky;
   top: 0;
@@ -155,7 +152,6 @@ body {
   }
 }
 
-/* Estilos para a seção Hero */
 .hero-section {
   padding: 5rem 0;
   background: linear-gradient(to right, #faf5ff, #f0f9ff);
@@ -305,7 +301,6 @@ body {
   justify-content: center;
 }
 
-/* Animações */
 .fade-in {
   animation: fadeIn 0.8s ease forwards;
 }
@@ -336,10 +331,8 @@ body {
   }
 }
 
-/* Footer */
 .footer {
   background: rgba(15, 23, 42, 0.8);
-  /* Cor escura com 80% de opacidade */
   color: white;
   padding: 2rem 0;
   text-align: center;
@@ -373,10 +366,14 @@ body {
   margin-top: 1rem;
 }
 
-/* Estilos gerais da seção Experience */
 .experience-section {
   padding: 80px 0;
   background: linear-gradient(to right, #faf5ff, #f0f9ff);
+}
+
+.type {
+  font-size: 0.875rem;
+  color: #6b7280;
 }
 
 .experience-container {
@@ -433,7 +430,6 @@ body {
   font-weight: 500;
 }
 
-/* Layout lado a lado */
 .experience-content-wrapper {
   display: flex;
   gap: 2rem;
@@ -456,7 +452,6 @@ body {
   flex-shrink: 0;
 }
 
-/* Carrossel de imagens */
 .carousel-container {
   position: relative;
   width: 100%;
@@ -509,7 +504,6 @@ body {
   right: 15px;
 }
 
-/* Responsividade */
 @media (max-width: 900px) {
   .experience-content-wrapper {
     flex-direction: column;
@@ -525,7 +519,6 @@ body {
   }
 }
 
-/* Seção de Notícias e Publicações - Cards */
 .publications-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -609,7 +602,6 @@ body {
   text-decoration: underline;
 }
 
-/* Animações (opcional - só se estiver usando Framer Motion) */
 .slide-up.animate {
   opacity: 1;
   transform: translateY(0);
@@ -672,7 +664,6 @@ body {
   margin-top: 0.5rem;
 }
 
-/* Estilos para a página de projeto individual */
 .project-page {
   min-height: 100vh;
   display: flex;
@@ -696,13 +687,11 @@ body {
   color: #333;
 }
 
-/* Container de mídia */
 .project-media-container {
   margin-bottom: 2rem;
   position: relative;
 }
 
-/* Estilos para imagem única */
 .project-image-container {
   position: relative;
   width: 100%;
@@ -712,7 +701,6 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para carrossel */
 .project-carousel {
   position: relative;
   width: 100%;
@@ -770,7 +758,6 @@ body {
   right: 15px;
 }
 
-/* Descrição do projeto */
 .project-description-slug {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -778,7 +765,6 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Links do projeto */
 .project-link {
   padding: 0.75rem;
   border-radius: 6px;
@@ -811,7 +797,6 @@ body {
   background-color: #1d4ed8;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
 
   .project-image-container,
@@ -831,7 +816,6 @@ body {
   }
 }
 
-/* Estilos para a seção TechStack */
 .tech-stack-section {
   position: relative;
   margin-top: 3rem;
@@ -944,4 +928,74 @@ body {
 .project-tag:hover {
   background-color: #7c3aed;
   color: #faf5ff;
+}
+
+.about {
+  padding: 4rem 1rem;
+  background: linear-gradient(to right, #faf5ff, #f0f9ff);
+  text-align: center;
+}
+
+.about .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+.about-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #4b5563;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto; 
+}
+
+.freelance-link {
+  color: #7c3aed; 
+  font-weight: 500;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.freelance-link:hover {
+  text-decoration: underline;
+}
+
+.about-carousel-wrapper {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px; 
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-carousel-slide {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.about-carousel-image {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.carousel-btn svg {
+  font-size: 1.2rem;
+  color: #333;
 }
