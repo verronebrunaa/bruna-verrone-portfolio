@@ -30,12 +30,9 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          {/* O título agora fica fora do wrapper de conteúdo para ser centralizado no topo */}
           <h2 className="about-title">{aboutData.title}</h2>
 
-          {/* ===== NOVO WRAPPER PARA O CONTEÚDO EM COLUNAS ===== */}
           <div className="about-content-wrapper">
-            {/* Coluna da Esquerda: Carrossel de Imagens */}
             {aboutData.images && aboutData.images.length > 0 && (
               <div className="about-carousel-wrapper">
                 <div className="about-carousel-container">
@@ -69,7 +66,6 @@ export default function About() {
               </div>
             )}
 
-            {/* Coluna da Direita: Descrição */}
             <p className="about-description">
               {aboutData.description}
               <a
