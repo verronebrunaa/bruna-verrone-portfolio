@@ -8,9 +8,16 @@ export const aboutData: AboutData = {
     text: "@vivendodeshows"
   },
   images: [
-    { src: "/images/about/foto1.jpg", alt: "Descrição da sua foto pessoal 1" },
-    { src: "/images/about/foto2.jpg", alt: "Descrição da sua foto pessoal 2" },
-    { src: "/images/about/foto3.jpg", alt: "Descrição da sua foto pessoal 3" },
-    { src: "/images/about/foto4.jpg", alt: "Descrição da sua foto pessoal 4" }
+    { src: "/assets/pictures/about/exposição.jpg", alt: "Descrição da sua foto pessoal 1" },
+    { src: "/assets/pictures/about/websummit - devs.JPEG", alt: "Descrição da sua foto pessoal 4" },
+    { src: "/assets/pictures/about/Turquia - 2023.jpg", alt: "Descrição da sua foto pessoal 4" },
+    { src: "/assets/pictures/about/FrontInSampa.jpg", alt: "Descrição da sua foto pessoal 2" },
+    { src: "/assets/pictures/about/Websummit - hyatt.JPEG", alt: "Descrição da sua foto pessoal 4" },
+    { src: "/assets/pictures/about/Hack Week 2023382.jpg", alt: "Descrição da sua foto pessoal 4" },
+    { src: "/assets/pictures/about/Turquia - mesquita azul.jpg", alt: "Descrição da sua foto pessoal 4" },
+    { src: "/assets/pictures/about/websummit - nina.JPG", alt: "Descrição da sua foto pessoal 4" },
+    { src: "/assets/pictures/about/Hack Week 202336.jpg", alt: "Descrição da sua foto pessoal 3" },
+    { src: "/assets/pictures/about/Turquia - palacio.jpg", alt: "Descrição da sua foto pessoal 4" },
+    { src: "/assets/pictures/about/websummit.jpg", alt: "Descrição da sua foto pessoal 4" },
   ]
 };
