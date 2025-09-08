@@ -153,7 +153,7 @@ body {
 }
 
 .hero-section {
-  padding: 5rem 0;
+  padding: 2rem 0;
   background: linear-gradient(to right, #faf5ff, #f0f9ff);
 }
 
@@ -396,7 +396,6 @@ body {
   }
 }
 
-/* Card de experiência */
 .experience-card {
   background-color: #f9fafb;
   padding: 2rem;
@@ -931,21 +930,30 @@ body {
 }
 
 .about {
-  padding: 4rem 1rem;
+  padding: 0rem 1rem 2rem 0rem;
   background: linear-gradient(to right, #faf5ff, #f0f9ff);
-  text-align: center;
 }
 
 .about .container {
-  max-width: 800px;
+  max-width: 1100px; 
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .about-title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
   color: #111827;
+  text-align: center; 
+}
+
+/* O wrapper para o conteúdo em colunas */
+.about-content-wrapper {
+  display: flex;
+  flex-direction: column; 
+  width: 100%;
 }
 
 .about-description {
@@ -953,11 +961,12 @@ body {
   line-height: 1.8;
   color: #4b5563;
   max-width: 700px;
-  margin: 0 auto 2.5rem auto; 
+  margin: 0 auto;
+  text-align: center;
 }
 
 .freelance-link {
-  color: #7c3aed; 
+  color: #7c3aed;
   font-weight: 500;
   text-decoration: none;
   transition: text-decoration 0.3s ease;
@@ -968,7 +977,8 @@ body {
 }
 
 .about-carousel-wrapper {
-  margin-top: 3rem;
+  margin-top: 0;
+  margin-bottom: 3rem; 
   display: flex;
   justify-content: center;
 }
@@ -976,7 +986,7 @@ body {
 .about-carousel-container {
   position: relative;
   width: 100%;
-  max-width: 1000px; 
+  max-width: 500px; 
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
@@ -991,11 +1001,36 @@ body {
 .about-carousel-image {
   flex-shrink: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; 
+  height: auto;
+  object-fit: cover;
 }
 
 .carousel-btn svg {
   font-size: 1.2rem;
   color: #333;
+}
+
+
+@media (min-width: 992px) {
+  .about-content-wrapper {
+    flex-direction: row; 
+    align-items: center; 
+    gap: 3rem; 
+  }
+
+  .about-carousel-wrapper {
+    flex: 0 0 45%;
+    margin-bottom: 0;
+  }
+
+  .about-carousel-container {
+    max-width: none;
+  }
+
+  .about-description {
+    flex: 1; 
+    text-align: left; 
+    margin: 0; 
+    max-width: none; 
+  }
 }
