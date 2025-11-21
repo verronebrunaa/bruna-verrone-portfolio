@@ -2,19 +2,22 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function News() {
+  const { t } = useLanguage();
+  
   return (
     <section className="experience-section">
       <div className="experience-container">
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6 }}
           className="publications-container"
         >
-          <h2 className="section-title">Notícias e Publicações</h2>
+          <h2 className="section-title">{t('news.title')}</h2>
 
           <div className="publications-grid">
             <motion.div
@@ -32,11 +35,9 @@ export default function News() {
                 />
               </div>
               <div className="card-content">
-                <h3>Destaque na SumUp - Mulher em Tech</h3>
+                <h3>{t('news.sumup.title')}</h3>
                 <p>
-                  Fui mencionada na reportagem &quot;Women in Tech Generation
-                  Brazil&quot; da SumUp, que destaca a importância da
-                  diversidade e inclusão na tecnologia.
+                  {t('news.sumup.description')}
                 </p>
                 <div className="card-links">
                   <motion.a
@@ -46,7 +47,7 @@ export default function News() {
                     className="card-link"
                     whileHover={{ scale: 1.05 }}
                   >
-                    Leia a reportagem
+                    {t('news.sumup.link')}
                   </motion.a>
                 </div>
               </div>
@@ -54,23 +55,24 @@ export default function News() {
 
             <motion.div
               className="publication-card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
               whileHover={{ y: -5 }}
-              transition={{ duration: 0.2 }}
             >
               <div className="card-image">
                 <Image
-                  src={"/assets/pictures/news/Facens-grupoIluminação.jpg"}
+                  src="/assets/pictures/news/Facens-grupoIluminação.jpg"
                   width={687}
                   height={200}
-                  alt={"Women in tech SumUp"}
+                  alt="Sistema de Iluminação"
                   className="project-image"
                 />
               </div>
               <div className="card-content">
-                <h3>Projeto Acadêmico - Sistema de Manutenção de Iluminações Públicas</h3>
+                <h3>{t('news.lighting.title')}</h3>
                 <p>
-                  Sistema de Manutenção de Iluminações Públicas publicado na
-                  revista Joins.
+                  {t('news.lighting.description')}
                 </p>
                 <div className="card-links">
                   <motion.a
@@ -80,7 +82,7 @@ export default function News() {
                     className="card-link"
                     whileHover={{ scale: 1.05 }}
                   >
-                    Veja o artigo
+                    {t('news.lighting.link')}
                   </motion.a>
                 </div>
               </div>
@@ -88,23 +90,24 @@ export default function News() {
 
             <motion.div
               className="publication-card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
               whileHover={{ y: -5 }}
-              transition={{ duration: 0.2 }}
             >
               <div className="card-image">
                 <Image
-                  src={"/assets/pictures/news/Facens-GrupoTijolo.jpg"}
+                  src="/assets/pictures/news/Facens-GrupoTijolo.jpg"
                   width={687}
                   height={200}
-                  alt={"Facens - Grupo Tijolo Ecológico"}
+                  alt="Tijolo Ecológico"
                   className="project-image"
                 />
               </div>
               <div className="card-content">
-                <h3>Projeto Acadêmico - Tijolo ecológico a base de fibra de coco</h3>
+                <h3>{t('news.brick.title')}</h3>
                 <p>
-                  Tijolo ecológico a base de fibra de coco para reaproveitamento
-                  de resíduos sólidos.
+                  {t('news.brick.description')}
                 </p>
                 <div className="card-links">
                   <motion.a
@@ -114,7 +117,7 @@ export default function News() {
                     className="card-link"
                     whileHover={{ scale: 1.05 }}
                   >
-                    Veja o artigo
+                    {t('news.brick.link')}
                   </motion.a>
                 </div>
               </div>

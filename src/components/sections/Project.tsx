@@ -2,6 +2,8 @@
 
 import ImageCarousel from "@/components/ui/ImageCarousel";
 import { Project } from "@/types/project";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { projectTranslations } from "@/data/translations";
 
 export interface ImageCarouselProps {
   imageNames: string[];
@@ -9,13 +11,21 @@ export interface ImageCarouselProps {
 }
 
 export default function ProjectClient({ project }: { readonly project: Project }) {
+  const { t, language } = useLanguage();
+  
   if (!project) {
     return null;
   }
+
+  const translatedProjects = projectTranslations[language];
+  const translatedProject = translatedProjects.find(tp => tp.slug === project.slug);
+
   return (
     <div className="project-page flex-1">
       <div className="project-container">
-        <h1 className="project-title-slug">{project.title}</h1>
+        <h1 className="project-title-slug">
+          {translatedProject?.title || project.title}
+        </h1>
 
         {project.images && project.images.length > 0 && (
           <div className="project-media-container">
@@ -31,7 +41,9 @@ export default function ProjectClient({ project }: { readonly project: Project }
           </div>
         )}
 
-        <p className="project-description-slug">{project.description}</p>
+        <p className="project-description-slug">
+          {translatedProject?.description || project.description}
+        </p>
 
         {(project.gitHubLink || project.liveLink) && (
           <div className="project-links">
@@ -42,7 +54,7 @@ export default function ProjectClient({ project }: { readonly project: Project }
                 rel="noopener noreferrer"
                 className="project-link github"
               >
-                Ver no GitHub
+                {t('projects.github')}
               </a>
             )}
             {project.liveLink && (
@@ -52,7 +64,7 @@ export default function ProjectClient({ project }: { readonly project: Project }
                 rel="noopener noreferrer"
                 className="project-link live"
               >
-                Ver Projeto Online
+                {t('projects.live')}
               </a>
             )}
           </div>

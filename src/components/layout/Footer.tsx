@@ -1,8 +1,10 @@
 "use client";
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="footer">
       <div className="container footer-container">
@@ -53,8 +55,8 @@ export default function Footer() {
         </div>
 
         <p className="footer-copyright">
-          Desenvolvido com ❤️ por <strong>Bruna Verrone</strong>
-          <br />© {new Date().getFullYear()} - Todos os direitos reservados.
+          {t('footer.developedWith')} <strong>Bruna Verrone</strong>
+          <br />© {new Date().getFullYear()} - {t('footer.rights')}.
         </p>
       </div>
     </footer>

@@ -5,8 +5,11 @@ import { FaWhatsapp } from "react-icons/fa";
 import TechStack from "./TechStack";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hero() {
+  const { t, language } = useLanguage();
+
   return (
     <section className="hero-section">
       <div className="hero-container">
@@ -17,30 +20,36 @@ export default function Hero() {
           className="hero-content"
         >
           <h1 className="hero-title">
-            Olá, eu sou
+            {t('hero.greeting')}
             <br />
-            <span style={{ color: "#9333ea" }}>Bruna Verrone</span>
+            <span style={{ color: "#9333ea" }}>{t('hero.name')}</span>
           </h1>
           <TypeAnimation
-            sequence={[
-              "Desenvolvedora Full Stack",
-              2000,
-              "com foco em Front-end",
-              2000,
-            ]}
+            sequence={
+              language === 'en' 
+                ? [
+                    "Full Stack Developer",
+                    2000,
+                    "focused on Front-end",
+                    2000,
+                  ]
+                : [
+                    "Desenvolvedora Full Stack",
+                    2000,
+                    "com foco em Front-end",
+                    2000,
+                  ]
+            }
             wrapper="span"
             className="hero-subtitle"
             repeat={Infinity}
+            key={language} // força re-render quando muda idioma
           />
           <p className="hero-description">
-            Apaixonada por tecnologia e movida por desafios. Tenho 25 anos, sou
-            formada em Comércio Exterior e atualmente curso Engenharia da
-            Computação na Facens em Sorocaba. Estou sempre buscando aprender
-            mais e evoluir na área de tecnologia.
+            {t('hero.description1')}
           </p>
           <p className="hero-description">
-            Estou à disposição para conversar sobre projetos, colaborações ou
-            oportunidades
+            {t('hero.description2')}
           </p>
           <div className="hero-actions">
             <a
@@ -50,7 +59,7 @@ export default function Hero() {
               className="hero-whatsapp-button"
             >
               <FaWhatsapp className="hero-whatsapp-icon" size={20} />
-              Me chama no WhatsApp
+              {t('hero.whatsapp')}
             </a>
           </div>
         </motion.div>

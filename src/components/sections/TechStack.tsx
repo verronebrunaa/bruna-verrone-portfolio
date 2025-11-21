@@ -3,6 +3,7 @@
 import React from "react";
 import { techData } from "@/data/techData";
 import { TechCategoryProps, TechItemProps } from "@/types/techData";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const TechItem = ({ name, icon: Icon }: TechItemProps) => (
   <div className="tech-item">
@@ -25,24 +26,26 @@ const TechCategory = ({ title, items }: TechCategoryProps) => (
 );
 
 export default function TechStack() {
+  const { t } = useLanguage();
+
   return (
     <section className="tech-stack-section" data-aos="fade-up">
       <h2 className="tech-stack-title">
-        Tecnologias e Ferramentas que utilizo
+        {t('tech.title')}
       </h2>
       <div className="tech-stack-grid">
         <div className="tech-card">
-          <TechCategory title="Linguagens" items={techData.linguagens} />
-          <TechCategory title="Frontend" items={techData.frontend} />
+          <TechCategory title={t('tech.languages')} items={techData.linguagens} />
+          <TechCategory title={t('tech.frontend')} items={techData.frontend} />
         </div>
 
         <div className="tech-card">
           <TechCategory
-            title="Ferramentas e Testes"
+            title={t('tech.tools')}
             items={techData.ferramentas}
           />
           <TechCategory
-            title="Infraestrutura e Bancos de Dados"
+            title={t('tech.infra')}
             items={techData.infra}
           />
         </div>

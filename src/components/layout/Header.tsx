@@ -3,9 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSelector from "@/components/ui/LanguageSelector";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <header className="header">
@@ -13,7 +16,7 @@ export default function Header() {
         <div className="header-content">
           <Link href="/" className="header-home-link">
             <h1 className="header-title">&lt;Bruna Verrone/&gt;</h1>
-            <p className="header-subtitle">Desenvolvedora Full Stack</p>
+            <p className="header-subtitle">{t('header.subtitle')}</p>
           </Link>
 
           <button
@@ -27,17 +30,18 @@ export default function Header() {
 
         <nav className={`header-links ${menuOpen ? "open" : ""}`}>
           <Link href="/projects" className="header-link">
-            Projetos
+            {t('nav.projects')}
           </Link>
           <Link href="/experience" className="header-link">
-            Experiência
+            {t('nav.experience')}
           </Link>
           <Link href="/courses" className="header-link">
-            Cursos
+            {t('nav.courses')}
           </Link>
           <Link href="/news" className="header-link">
-            Notícias e Publicações
+            {t('nav.news')}
           </Link>
+          <LanguageSelector />
         </nav>
       </div>
     </header>

@@ -1,12 +1,15 @@
 "use client";
 
-import { experiences } from "@/data/experience";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { experienceTranslations } from "@/data/translations";
 
 export default function Experience() {
+  const { t, language } = useLanguage();
+  const experiences = experienceTranslations[language];
   const [currentSlides, setCurrentSlides] = useState(experiences.map(() => 0));
 
   const nextSlide = (index: number) => {
@@ -40,7 +43,7 @@ export default function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="section-title">Experiência Profissional</h2>
+          <h2 className="section-title">{t('experience.title')}</h2>
 
           {experiences.map((exp, index) => (
             <div key={index} className="experience-card">

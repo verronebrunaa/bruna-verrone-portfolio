@@ -5,9 +5,13 @@ import { aboutData } from "@/data/about";
 import Image from "next/image";
 import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { aboutTranslations } from "@/data/translations";
 
 export default function About() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const { t, language } = useLanguage();
+  const aboutContent = aboutTranslations[language];
 
   const nextSlide = () => {
     setCurrentSlide(
@@ -30,7 +34,7 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="about-title">{aboutData.title}</h2>
+          <h2 className="about-title">{t('about.title')}</h2>
 
           <div className="about-content-wrapper">
             {aboutData.images && aboutData.images.length > 0 && (
@@ -67,7 +71,7 @@ export default function About() {
             )}
 
             <p className="about-description">
-              {aboutData.description}
+              {aboutContent.description}
               <a
                 href={aboutData.freelanceLink.url}
                 target="_blank"
