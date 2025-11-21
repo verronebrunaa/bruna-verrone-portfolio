@@ -1,3 +1,5 @@
+export type ProjectCategory = 'personal' | 'academic' | 'professional';
+
 export interface Project {
     id: number;
     slug: string;
@@ -7,5 +9,6 @@ export interface Project {
     liveLink?: string;
     images?: string[];
     tags?: string[];
+    category: ProjectCategory;
   }
   

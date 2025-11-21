@@ -10,6 +10,7 @@ export const projectsData: Project[] = [
     gitHubLink: "https://github.com/verronebrunaa/BackEnd-Blog-Pessoal",
     images: ["/assets/pictures/Projects/BlogPessoal-Swagger.png"],
     tags: ["Java", "Spring Boot", "API", "Backend"],
+    category: "academic",
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ export const projectsData: Project[] = [
       "/assets/pictures/Projects/Bookgram-Cadastro.png",
       "/assets/pictures/Projects/Bookgram-Login.png",
     ],
+    category: "academic",
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ export const projectsData: Project[] = [
       "Um projeto de portfólio desenvolvido durante o bootcamp da Generation Brasil, utilizando HTML, CSS e JavaScript. O projeto foi desenvolvido como parte do Trabalho de Conclusão do curso.",
     gitHubLink: "https://github.com/verronebrunaa/Front-End-Generation",
     tags: ["HTML", "CSS", "JavaScript", "Front-End"],
+    category: "academic",
   },
   {
     id: 4,
@@ -43,6 +46,7 @@ export const projectsData: Project[] = [
     liveLink: "https://verronebrunaa.github.io/Mario-Jump-Game/",
     images: ["/assets/pictures/Projects/MarioJump-Project.png"],
     tags: ["JavaScript", "HTML", "CSS", "Jogos", "Front-End"],
+    category: "personal",
   },
   {
     id: 5,
@@ -54,6 +58,7 @@ export const projectsData: Project[] = [
     liveLink: "https://verronebrunaa.github.io/pagina_pessoal_css/index.html",
     images: ["/assets/pictures/Projects/PaginaPessoal-Project.png"],
     tags: ["HTML", "CSS", "Front-End", "Facens"],
+    category: "academic",
   },
   {
     id: 6,
@@ -65,6 +70,7 @@ export const projectsData: Project[] = [
     liveLink: "https://verronebrunaa.github.io/portfolio-basic/",
     images: ["/assets/pictures/Projects/PortfolioBasic-Project.png"],
     tags: ["HTML", "CSS", "Front-End"],
+    category: "personal",
   },
   {
     id: 7,
@@ -74,6 +80,7 @@ export const projectsData: Project[] = [
       "Lista de exercícios de Java desenvolvidos durante o Bootcamp da Generation Brasil.",
     gitHubLink: "https://github.com/verronebrunaa/Java",
     tags: ["Java", "Backend", "Facens", "lógica"],
+    category: "academic",
   },
   {
     id: 8,
@@ -85,6 +92,7 @@ export const projectsData: Project[] = [
     liveLink: "https://verronebrunaa.github.io/Bootstrap/",
     images: ["/assets/pictures/Projects/Bootstrap-Blog.png"],
     tags: ["HTML", "CSS", "Bootstrap", "Front-End", "Facens"],
+    category: "academic",
   },
   {
     id: 9,
@@ -94,5 +102,6 @@ export const projectsData: Project[] = [
       "Uma API de back-end para um aplicativo de motel criado usando C# com ASP.NET Core.",
     gitHubLink: "https://github.com/verronebrunaa/MotelAPI",
     tags: ["C#", "ASP.NET Core", "API", "Backend"],
+    category: "academic",
   },
 ];
