@@ -139,6 +139,7 @@ export const aboutTranslations = {
       text: "@vivendodeshows",
     },
     images: [
+      { src: "/assets/pictures/about/GDG-Sorocaba.jpg", alt: "Foto no evento GDG Sorocaba em 2025" },
       { src: "/assets/pictures/about/exposição.jpg", alt: "Foto de uma instalação artística" },
       { src: "/assets/pictures/about/websummit - devs.JPEG", alt: "Foto de Happy Hour com os Devs no RJ" },
       { src: "/assets/pictures/about/Turquia - 2023.jpg", alt: "Viagem a turquia em 2023" },
@@ -160,6 +161,7 @@ export const aboutTranslations = {
       text: "@vivendodeshows",
     },
     images: [
+      { src: "/assets/pictures/about/GDG-Sorocaba.jpg", alt: "Foto no evento GDG Sorocaba em 2025" },
       { src: "/assets/pictures/about/exposição.jpg", alt: "Photo of an art installation" },
       { src: "/assets/pictures/about/websummit - devs.JPEG", alt: "Photo of Happy Hour with Devs in RJ" },
       { src: "/assets/pictures/about/Turquia - 2023.jpg", alt: "Trip to Turkey in 2023" },
