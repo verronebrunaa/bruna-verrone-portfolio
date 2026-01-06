@@ -86,6 +86,7 @@ const getTranslations = (language: Language): Record<string, string> => {
       'projects.filter.personal': 'Pessoais',
       'projects.filter.academic': 'Acadêmicos',
       'projects.filter.professional': 'Profissionais',
+      'projects.noProjects': 'Nenhum projeto encontrado para esta categoria.',
 
       'news.title': 'Notícias e Publicações',
 
