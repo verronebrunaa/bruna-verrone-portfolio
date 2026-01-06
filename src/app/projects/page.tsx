@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { projectsData } from "@/data/projects";
+import { projectTranslations } from "@/data/translations";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { projectTranslations } from "@/data/translations";
 import { useState } from "react";
 import { ProjectCategory } from "@/types/project";
 
@@ -15,8 +14,8 @@ export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory | 'all'>('all');
   
   const filteredProjects = activeFilter === 'all' 
-    ? projectsData 
-    : projectsData.filter(project => project.category === activeFilter);
+    ? translatedProjects 
+    : translatedProjects.filter(project => project.category === activeFilter);
 
   const filters: Array<{key: ProjectCategory | 'all', label: string}> = [
     { key: 'all', label: t('projects.filter.all') },

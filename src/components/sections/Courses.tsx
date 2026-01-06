@@ -1,6 +1,6 @@
 "use client";
 
-import { coursesData } from "@/data/courses";
+import { coursesData } from "@/data/translations";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 

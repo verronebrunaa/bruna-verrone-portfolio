@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { aboutData } from "@/data/about";
 import Image from "next/image";
 import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 import { motion } from "framer-motion";
@@ -15,13 +14,13 @@ export default function About() {
 
   const nextSlide = () => {
     setCurrentSlide(
-      currentSlide === aboutData.images.length - 1 ? 0 : currentSlide + 1
+      currentSlide === aboutContent.images.length - 1 ? 0 : currentSlide + 1
     );
   };
 
   const prevSlide = () => {
     setCurrentSlide(
-      currentSlide === 0 ? aboutData.images.length - 1 : currentSlide - 1
+      currentSlide === 0 ? aboutContent.images.length - 1 : currentSlide - 1
     );
   };
 
@@ -37,14 +36,14 @@ export default function About() {
           <h2 className="about-title">{t('about.title')}</h2>
 
           <div className="about-content-wrapper">
-            {aboutData.images && aboutData.images.length > 0 && (
+            {aboutContent.images && aboutContent.images.length > 0 && (
               <div className="about-carousel-wrapper">
                 <div className="about-carousel-container">
                   <div
                     className="about-carousel-slide"
                     style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                   >
-                    {aboutData.images.map((img) => (
+                    {aboutContent.images.map((img) => (
                       <Image
                         key={img.src}
                         src={img.src}
@@ -56,7 +55,7 @@ export default function About() {
                     ))}
                   </div>
 
-                  {aboutData.images.length > 1 && (
+                  {aboutContent.images.length > 1 && (
                     <>
                       <button className="carousel-btn prev" onClick={prevSlide}>
                         <GrCaretPrevious />
@@ -73,12 +72,12 @@ export default function About() {
             <p className="about-description">
               {aboutContent.description}
               <a
-                href={aboutData.freelanceLink.url}
+                href={aboutContent.freelanceLink.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="freelance-link"
               >
-                {aboutData.freelanceLink.text}
+                {aboutContent.freelanceLink.text}
               </a>
               .
             </p>
