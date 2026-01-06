@@ -1,5 +1,3 @@
-
-
 export const experienceTranslations = {
   pt: [
     {
@@ -14,9 +12,23 @@ export const experienceTranslations = {
       company: "Liv Energy | Wattsfy | Sunrent",
       period: "05/2025 - 09/2025",
       position: "Estágiaria de Desenvolvimento",
-      type: "Estágio",
-      description: "Atuei como desenvolvedora Full Stack no Grupo Liv Energy, contribuindo para projetos de tecnologia no setor de energia renovável.",
-      images: undefined,
+      type: "Estágio - Presencial",
+      description: "Contribui para o desenvolvimento técnico da plataforma Sunrent/Wattsfy, as empresas se fundiram para virar Liv Energy. Atuei com foco em soluções de software envolvendo automação, OCR, inteligência artificial, integrações via API e desenvolvimento do novo CRM. Também apoio a análise e otimização de processos operacionais, visando um onboarding, atendimento ao cliente e desempenho do sistema mais suaves.",
+      images: [{
+        src: "/assets/pictures/experience/LivEnergy.jpg",
+        alt: "Fazenda de energia solar do Grupo Liv Energy",
+      }],
+    },
+    {
+      company: "Grupo Amazonas | Codako",
+      period: "05/2024 - 12/2024",
+      position: "Desenvolvedora Front-end",
+      type: "PJ - híbrido",
+      description: "Atuei como desenvolvedora front-end no Grupo Amazonas em uma divisão nova chamada de Codako, focando no desenvolvimento de interfaces de usuário responsivas e acessíveis para aplicações web. Trabalhei em colaboração com equipes de design e back-end para implementar soluções eficazes que melhoraram a experiência do usuário.",
+      images: [{
+        src: "/assets/pictures/experience/Codako-AWS.jpg",
+        alt: "Equipe Codako na AWS 2024",
+      }],
     },
     {
       company: "SumUp",
@@ -39,11 +51,7 @@ export const experienceTranslations = {
         },
         {
           src: "/assets/pictures/experience/SumupBank.jpg",
-          alt: "Visita ao SumUp Bank",
-        },
-        {
-          src: "/assets/pictures/experience/HeathCheck.jpg",
-          alt: "Health Check da Squad",
+          alt: "Escritório da SumUp Brasil",
         },
       ],
     },
@@ -53,7 +61,12 @@ export const experienceTranslations = {
       position: "Estudante de Desenvolvimento Full Stack Java",
       type: "Bootcamp",
       description: "Participei de um bootcamp intensivo de 400 horas, focado em desenvolvimento Full Stack com Java e tecnologias web modernas. O programa incluiu projetos práticos, metodologias ágeis e preparação para o mercado de trabalho.",
-      images: undefined,
+      images: [
+        { src: "/assets/pictures/experience/Generation.jpg", alt: "Generation Bootcamp" },
+        { src: "/assets/pictures/experience/Generation-formatura.jpg", alt: "Generation Bootcamp Online Graduation" },
+        { src: "/assets/pictures/experience/Generation-Bruna.jpg", alt: "Generation Bootcamp Bruna" },
+        { src: "/assets/pictures/experience/Generation-Sumup.jpg", alt: "Generation Bootcamp and SumUp" },
+      ],
     },
   ],
   en: [
@@ -69,8 +82,19 @@ export const experienceTranslations = {
       company: "Liv Energy | Wattsfy | Sunrent",
       period: "05/2025 - 09/2025",
       position: "Development Intern",
-      type: "Internship",
-      description: "I worked as a Full Stack developer at Liv Energy Group, contributing to technology projects in the renewable energy sector.",
+      type: "Internship - On-site",
+      description: "I contributed to the technical development of the Sunrent/Wattsfy platform, the companies merged to become Liv Energy. I worked focusing on software solutions involving automation, OCR, artificial intelligence, API integrations, and the development of the new CRM. I also supported the analysis and optimization of operational processes, aiming for smoother onboarding, customer service, and system performance.",
+      images: [{
+        src: "/assets/pictures/experience/LivEnergy.jpg",
+        alt: "Solar energy farm of Grupo Liv Energy",
+      }],
+    },
+    {
+      company: "Grupo Amazonas | Codako",
+      period: "05/2024 - 12/2024",
+      position: "Front-end Developer",
+      type: "Contract - Hybrid",
+      description: "I worked as a front-end developer at Grupo Amazonas in a new division called Codako, focusing on developing responsive and accessible user interfaces for web applications. I collaborated with design and back-end teams to implement effective solutions that improved the user experience.",
       images: undefined,
     },
     {
@@ -94,11 +118,7 @@ export const experienceTranslations = {
         },
         {
           src: "/assets/pictures/experience/SumupBank.jpg",
-          alt: "Visit to SumUp Bank",
-        },
-        {
-          src: "/assets/pictures/experience/HeathCheck.jpg",
-          alt: "Squad Health Check",
+          alt: "SumUp Brazil Office",
         },
       ],
     },
@@ -108,7 +128,12 @@ export const experienceTranslations = {
       position: "Full Stack Java Development Student",
       type: "Bootcamp",
       description: "I participated in an intensive 400-hour bootcamp focused on Full Stack development with Java and modern web technologies. The program included practical projects, agile methodologies, and job market preparation.",
-      images: undefined,
+      images: [
+        { src: "/assets/pictures/experience/Generation.jpg", alt: "Generation Bootcamp" },
+        { src: "/assets/pictures/experience/Generation-formatura.jpg", alt: "Generation Bootcamp Online Graduation" },
+        { src: "/assets/pictures/experience/Generation-Bruna.jpg", alt: "Generation Bootcamp Bruna" },
+        { src: "/assets/pictures/experience/Generation-Sumup.jpg", alt: "Generation Bootcamp and SumUp" },
+      ],
     },
   ]
 } as const;
