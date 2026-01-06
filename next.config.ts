@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  turbo: {
+    root: __dirname,
+  },
   images: {
     domains: [
       "www.coursera.org",
@@ -10,10 +13,10 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
   },
   typescript: {
-    ignoreBuildErrors: true, // Habilita apenas se necessário
+    ignoreBuildErrors: true,
   },
   eslint: {
-    ignoreDuringBuilds: true, // Opcional para builds urgentes
+    ignoreDuringBuilds: true,
   },
 };
 
