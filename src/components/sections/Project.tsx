@@ -10,15 +10,21 @@ export interface ImageCarouselProps {
   folder: string;
 }
 
-export default function ProjectClient({ project }: { readonly project: Project }) {
+export default function ProjectClient({
+  project,
+}: {
+  readonly project: Project;
+}) {
   const { t, language } = useLanguage();
-  
+
   if (!project) {
     return null;
   }
 
   const translatedProjects = projectTranslations[language];
-  const translatedProject = translatedProjects.find(tp => tp.slug === project.slug);
+  const translatedProject = translatedProjects.find(
+    (tp) => tp.slug === project.slug
+  );
 
   return (
     <div className="project-page flex-1">
@@ -54,7 +60,7 @@ export default function ProjectClient({ project }: { readonly project: Project }
                 rel="noopener noreferrer"
                 className="project-link github"
               >
-                {t('projects.github')}
+                {t("projects.github")}
               </a>
             )}
             {project.liveLink && (
@@ -64,7 +70,7 @@ export default function ProjectClient({ project }: { readonly project: Project }
                 rel="noopener noreferrer"
                 className="project-link live"
               >
-                {t('projects.live')}
+                {t("projects.live")}
               </a>
             )}
           </div>
