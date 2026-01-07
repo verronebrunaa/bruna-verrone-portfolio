@@ -63,6 +63,19 @@ export const experienceTranslations = {
         },
       ],
     },
+    {
+      company: "Generation Brasil",
+      period: "11/2021 - 03/2022",
+      position: "Estudante de Desenvolvimento Full Stack Java",
+      type: "Bootcamp",
+      description: "Participei de um bootcamp intensivo de 400 horas focado em desenvolvimento Full Stack com Java e tecnologias web modernas. O programa incluiu projetos práticos, metodologias ágeis e preparação para o mercado de trabalho.",
+      images: [
+        { src: "/assets/pictures/experience/Generation.jpg", alt: "Generation Bootcamp" },
+        { src: "/assets/pictures/experience/Generation-formatura.jpg", alt: "Generation Bootcamp Online Graduation" },
+        { src: "/assets/pictures/experience/Generation-Bruna.jpg", alt: "Generation Bootcamp Bruna" },
+        { src: "/assets/pictures/experience/Generation-Sumup.jpg", alt: "Generation Bootcamp and SumUp" },
+      ],
+    },
   ],
   en: [
     {
@@ -125,6 +138,19 @@ export const experienceTranslations = {
           src: "/assets/pictures/experience/SumupBank.jpg",
           alt: "Sumup Bank Team",
         },
+      ],
+    },
+    {
+      company: "Generation Brasil",
+      period: "11/2021 - 03/2022",
+      position: "Full Stack Java Development Student",
+      type: "Bootcamp",
+      description: "I participated in an intensive 400-hour bootcamp focused on Full Stack development with Java and modern web technologies. The program included practical projects, agile methodologies, and job market preparation.",
+      images: [
+        { src: "/assets/pictures/experience/Generation.jpg", alt: "Generation Bootcamp" },
+        { src: "/assets/pictures/experience/Generation-formatura.jpg", alt: "Generation Bootcamp Online Graduation" },
+        { src: "/assets/pictures/experience/Generation-Bruna.jpg", alt: "Generation Bootcamp Bruna" },
+        { src: "/assets/pictures/experience/Generation-Sumup.jpg", alt: "Generation Bootcamp and SumUp" },
       ],
     },
   ],
