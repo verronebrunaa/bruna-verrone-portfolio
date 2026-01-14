@@ -778,8 +778,8 @@ body {
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.15);
 }
 
 .project-title {
@@ -1048,18 +1048,6 @@ body {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.75rem;
-}
-
-.project-tag {
-  background-color: #e2e8f0;
-  color: #1e293b;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  justify-content: center;
-  align-items: center;
-  display: flex;
 }
 
 .project-tag:hover {
@@ -1435,12 +1423,6 @@ body {
   transition: transform 0.5s ease;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.15);
-}
-
-
 .project-card-overlay {
   position: absolute;
   inset: 0;
@@ -1461,6 +1443,7 @@ body {
   margin-bottom: 0.75rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1472,6 +1455,7 @@ body {
   flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1483,16 +1467,16 @@ body {
   margin-bottom: 1rem;
 }
 
-.project-tag {
+.project-card-tags .project-tag {
   padding: 0.25rem 0.75rem;
   font-size: 0.75rem;
   background-color: rgba(124, 58, 237, 0.1);
-  color: #7c3aed;
+  color: #5b21b6;
   border-radius: 9999px;
   border: 1px solid rgba(124, 58, 237, 0.2);
 }
 
-.project-tag-more {
+.project-card-tag-more {
   padding: 0.25rem 0.75rem;
   font-size: 0.75rem;
   background-color: #f3f4f6;
@@ -1702,6 +1686,7 @@ body {
   margin-bottom: 0.75rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1713,6 +1698,7 @@ body {
   flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

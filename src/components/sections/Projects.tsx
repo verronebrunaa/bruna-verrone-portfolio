@@ -140,10 +140,10 @@ export default function Projects() {
                         {project.description}
                       </p>
 
-                      {project.tags && project.tags.length > 0 && (
+                      {"tags" in project && Array.isArray(project.tags) && project.tags.length > 0 && (
                         <div className="project-card-tags">
-                          {project.tags.slice(0, 3).map((tag, tagIndex) => (
-                            <span key={tagIndex} className="project-tag">
+                          {project.tags.slice(0, 3).map((tag) => (
+                            <span key={tag} className="project-tag">
                               {tag}
                             </span>
                           ))}
@@ -151,9 +151,11 @@ export default function Projects() {
                       )}
 
                       <div className="project-horizontal-footer">
-                        <span className="project-category">
-                          {getCategoryLabel(project.category)}
-                        </span>
+                        {'category' in project && (
+                          <span className="project-category">
+                            {getCategoryLabel(project.category)}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </Link>

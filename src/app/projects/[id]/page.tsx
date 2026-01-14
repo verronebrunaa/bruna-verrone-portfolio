@@ -16,9 +16,9 @@ export function generateStaticParams() {
 export default async function ProjectPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 } & Record<string, never>) {
-  const { id } = params;
+  const { id } = await params;
 
   const project = projectTranslations.pt.find((p) => p.slug === id);
 
@@ -26,18 +26,15 @@ export default async function ProjectPage({
     notFound();
   }
 
-  const normalizeImage = (img: string | { src: string; alt?: string }) => {
-    return typeof img === "string"
-      ? img 
-      : { ...img, alt: img.alt ?? project.title };
-  };
-  
-  const projectImages = project.images?.map(normalizeImage) || [];
-
-  return ( 
+  return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <ProjectClient project={{ ...(project as Project), tags: [...project.tags], images: projectImages }} />
+      <ProjectClient
+        project={{
+          ...(project as Project),
+          tags: [...((project as Project).tags ?? [])],
+        }}
+      />
       <Footer />
     </div>
   );
