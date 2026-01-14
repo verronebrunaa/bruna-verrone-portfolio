@@ -309,6 +309,20 @@ export const projectTranslations = {
       tags: ["C#", "ASP.NET Core", "API", "Backend"],
       category: "academic",
     },
+    {id: 10,
+      slug: "links-project",
+      title: "Links Project - Linktree Clone",
+      description:"Um site simples que funciona como um Linktree, permitindo que os usuários compartilhem vários links em uma única página.",
+      gitHubLink: "https://github.com/verronebrunaa/links-project/",
+      liveLink: "https://verronebrunaa.github.io/links-project/",
+      tags: ["HTML", "CSS", "JavaScript", "Front-End"],
+      category: "personal",
+    },
+    {id: 11,
+      slug: "procurando-cores-website",
+      title: "Procurando Cores - Website",
+      description:"Uma Landing page desenvolvida para a Julia Santos do 'Procurando Cores', com o objetivo de divulgar seu trabalho como professora de artes.",
+    }
   ],
   en: [
     {
@@ -414,6 +428,20 @@ export const projectTranslations = {
       tags: ["C#", "ASP.NET Core", "API", "Backend"],
       category: "academic",
     },
+    {id: 10,
+      slug: "links-project",
+      title: "Links Project - Linktree Clone",
+      description:"A simple site that works like a Linktree, allowing users to share multiple links on a single page.",
+      gitHubLink: "https://github.com/verronebrunaa/links-project",
+      liveLink: "https://verronebrunaa.github.io/links-project/",
+      tags: ["HTML", "CSS", "JavaScript", "Front-End"],
+      category: "personal",
+    },
+    {id: 11,
+      slug: "procurando-cores-website",
+      title: "Procurando Cores - Website",
+      description:"A Landing page developed for Julia Santos from 'Procurando Cores', aiming to promote her work as an art teacher.",
+    }
   ],
 } as const;
 
