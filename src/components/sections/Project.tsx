@@ -36,10 +36,11 @@ export default function ProjectClient({
         {project.images && project.images.length > 0 && (
           <div className="project-media-container">
             <ImageCarousel
-              images={project.images.map((image) => ({
-                src: image,
-                alt: image,
-              }))}
+              images={project.images.map((image) =>
+                typeof image === "string"
+                  ? { src: image, alt: project.title }
+                  : { src: image.src, alt: image.alt ?? project.title }
+              )}
               showControls={true}
               autoPlay={false}
               interval={3000}

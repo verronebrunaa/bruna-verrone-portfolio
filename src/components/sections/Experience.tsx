@@ -7,9 +7,25 @@ import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { experienceTranslations } from "@/data/translations";
 
+interface ExperienceImage {
+  src: string;
+  alt: string;
+}
+
+interface Experience {
+  company: string;
+  period: string;
+  position: string;
+  type: string;
+  description: string;
+  images?: ExperienceImage[];
+}
+
 export default function Experience() {
   const { t, language } = useLanguage();
-  const experiences = experienceTranslations[language];
+  const experiences = experienceTranslations[
+    language
+  ] as unknown as Experience[];
   const [currentSlides, setCurrentSlides] = useState(experiences.map(() => 0));
 
   const nextSlide = (index: number) => {
@@ -43,7 +59,7 @@ export default function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="section-title">{t('experience.title')}</h2>
+          <h2 className="section-title">{t("experience.title")}</h2>
 
           {experiences.map((exp, index) => (
             <div key={index} className="experience-card">
@@ -71,19 +87,23 @@ export default function Experience() {
                       <div
                         className="carousel-slide"
                         style={{
-                          transform: `translateX(-${currentSlides[index] * 100}%)`,
+                          transform: `translateX(-${
+                            currentSlides[index] * 100
+                          }%)`,
                         }}
                       >
-                        {exp.images.map((img, imgIndex) => (
-                          <Image
-                            key={imgIndex}
-                            src={img.src}
-                            alt={img.alt}
-                            width={400}
-                            height={250}
-                            className="carousel-image"
-                          />
-                        ))}
+                        {exp.images.map(
+                          (img: ExperienceImage, imgIndex: number) => (
+                            <Image
+                              key={imgIndex}
+                              src={img.src}
+                              alt={img.alt}
+                              width={400}
+                              height={250}
+                              className="carousel-image"
+                            />
+                          )
+                        )}
                       </div>
 
                       {exp.images.length > 1 && (

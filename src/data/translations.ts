@@ -159,7 +159,8 @@ export const experienceTranslations = {
 export const aboutTranslations = {
   pt: {
     title: "Sobre Mim",
-    description: "Sou uma pessoa curiosa, amo ler, aprender coisas novas e compartilhar experiências. Para além do trabalho, gosto de viajar, explorar novas culturas e me conectar com pessoas. Amo ir a shows, ouvir música e cozinhar. As vezes faço freelas para o ",
+    description: ["Fiz transição de carreira aos 21 anos após me formar em Comércio Exterior. Atualmente, curso Engenharia da Computação na Facens. No trabalho procuro ser dedicada e comprometida, amo fuçar e aprender coisas novas, acredito que isso influenciou muito a me tornar uma desenvolvedora.",
+      " Para além do trabalho, me considero uma pessoa muito curiosa, sou mãe de dois pets lindos, amo ler, compartilhar experiências, viajar, explorar novas culturas e me conectar com pessoas. Ir a shows e ouvir música são meus combustíveis para o dia a dia. As vezes faço freelas para o "],
     freelanceLink: {
       url: "https://www.instagram.com/vivendodeshows/",
       text: "@vivendodeshows",
@@ -181,7 +182,7 @@ export const aboutTranslations = {
   },
   en: {
     title: "About Me",
-    description: "I am a curious person, I love reading, learning new things and sharing experiences. Beyond work, I like to travel, explore new cultures and connect with people. I love going to concerts, listening to music and cooking. Sometimes I do freelance work for ",
+    description: "I am a curious person, mother of two lovely pets, I love reading, learning new things, and sharing experiences. At work, I strive to be dedicated and committed; I love to explore and learn. Beyond work, I enjoy traveling, exploring new cultures, and connecting with people. Going to concerts and listening to music are my fuels for daily life. Sometimes I do freelance work for ",
     freelanceLink: {
       url: "https://www.instagram.com/vivendodeshows/",
       text: "@vivendodeshows",
@@ -464,8 +465,8 @@ export const generalTranslations = {
     'hero.name': 'Bruna Verrone',
     'hero.role1': 'Desenvolvedora Full Stack',
     'hero.role2': 'com foco em Front-end',
-    'hero.description1': 'Apaixonada por tecnologia e movida por desafios. Tenho 25 anos, sou formada em Comércio Exterior e atualmente curso Engenharia da Computação na Facens em Sorocaba. Estou sempre buscando aprender mais e evoluir na área de tecnologia.',
-    'hero.description2': 'Estou à disposição para conversar sobre projetos, colaborações ou oportunidades',
+    'hero.description1': 'Apaixonada por tecnologia e movida por desafios. Estou sempre buscando aprender mais e evoluir na área de tecnologia.',
+    'hero.description2': 'Estou disponível para conversar sobre projetos, colaborações ou oportunidades',
     'hero.whatsapp': 'Me chama no WhatsApp',
     'about.title': 'Sobre Mim',
     'about.description': 'Sou uma pessoa curiosa, amo ler, aprender coisas novas e compartilhar experiências. Para além do trabalho, gosto de viajar, explorar novas culturas e me conectar com pessoas. Amo ir a shows, ouvir música e cozinhar. As vezes faço freelas para o ',

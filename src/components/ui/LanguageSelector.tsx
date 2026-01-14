@@ -13,8 +13,6 @@ export default function LanguageSelector() {
     { code: "en", name: "English" },
   ];
 
-  const currentLanguage = languages.find((lang) => lang.code === language);
-
   return (
     <div className="language-selector">
       <button
