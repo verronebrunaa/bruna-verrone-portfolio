@@ -18,7 +18,10 @@ export default function Projects() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const projects = projectTranslations[language];
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = [
+    ...projects.filter((p) => p.category === "professional"),
+    ...projects.filter((p) => p.category !== "professional"),
+  ].slice(0, 3);
 
   const getCategoryLabel = (category: string) => {
     if (category === "personal") {
