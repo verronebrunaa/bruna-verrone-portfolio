@@ -19,48 +19,54 @@ export default function ThreeJSBackground({
   const particleSize = 0.02;
   const particleOpacity = 0.8;
 
-  const createParticles = (scene: THREE.Scene) => {
-    if (particlesMeshRef.current) {
-      scene.remove(particlesMeshRef.current);
-      particlesMeshRef.current.geometry.dispose();
-      const material = particlesMeshRef.current.material as THREE.PointsMaterial;
-      material.dispose();
-    }
-
-    const particlesGeometry = new THREE.BufferGeometry();
-    const posArray = new Float32Array(particleCount * 3);
-    const colorArray = new Float32Array(particleCount * 3);
-
-    for (let i = 0; i < particleCount * 3; i++) {
-      posArray[i] = (Math.random() - 0.5) * 10;
-      colorArray[i] = Math.random() * 0.5;
-    }
-
-    particlesGeometry.setAttribute(
-      "position",
-      new THREE.BufferAttribute(posArray, 3)
-    );
-    particlesGeometry.setAttribute(
-      "color",
-      new THREE.BufferAttribute(colorArray, 3)
-    );
-
-    const particlesMaterial = new THREE.PointsMaterial({
-      size: particleSize,
-      vertexColors: true,
-      transparent: true,
-      opacity: particleOpacity,
-      blending: THREE.AdditiveBlending,
-    });
-
-    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-    scene.add(particlesMesh);
-    particlesMeshRef.current = particlesMesh;
+  const randomFloat = (min: number, max: number) => {
+    const array = new Uint32Array(1);
+    crypto.getRandomValues(array);
+    return min + (array[0] / 0xffffffff) * (max - min);
   };
 
   useEffect(() => {
     const container = mountRef.current;
     if (!container) return;
+
+    const createParticles = (scene: THREE.Scene) => {
+      if (particlesMeshRef.current) {
+        scene.remove(particlesMeshRef.current);
+        particlesMeshRef.current.geometry.dispose();
+        const material = particlesMeshRef.current.material as THREE.PointsMaterial;
+        material.dispose();
+      }
+
+      const particlesGeometry = new THREE.BufferGeometry();
+      const posArray = new Float32Array(particleCount * 3);
+      const colorArray = new Float32Array(particleCount * 3);
+
+      for (let i = 0; i < particleCount * 3; i++) {
+        posArray[i] = randomFloat(-5, 5);
+        colorArray[i] = randomFloat(0, 0.5);
+      }
+
+      particlesGeometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(posArray, 3)
+      );
+      particlesGeometry.setAttribute(
+        "color",
+        new THREE.BufferAttribute(colorArray, 3)
+      );
+
+      const particlesMaterial = new THREE.PointsMaterial({
+        size: particleSize,
+        vertexColors: true,
+        transparent: true,
+        opacity: particleOpacity,
+        blending: THREE.AdditiveBlending,
+      });
+
+      const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+      scene.add(particlesMesh);
+      particlesMeshRef.current = particlesMesh;
+    };
 
     const scene = new THREE.Scene();
     sceneRef.current = scene;
@@ -121,7 +127,7 @@ export default function ThreeJSBackground({
         rendererRef.current &&
         container.contains(rendererRef.current.domElement)
       ) {
-        container.removeChild(rendererRef.current.domElement);
+        rendererRef.current.domElement.remove();
       }
 
       if (particlesMeshRef.current) {
