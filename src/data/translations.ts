@@ -420,6 +420,9 @@ export const projectTranslations = {
       title: "Procurando Cores - Website",
       description: "Uma Landing page desenvolvida para a Julia Santos do 'Procurando Cores', com o objetivo de divulgar seu trabalho como professora de artes.",
       category: "professional",
+      liveLink: "https://procurandocores.com.br/",
+      images: ["/assets/pictures/Projects/JujuProcurandoCores-Home.png", "/assets/pictures/Projects/JujuProcurandoCores-Cursos.png"],
+      tags: ["Front-End", "Landing Page", "Svelte", "CMS", "Criatividade", "Design"],
     },
     {
       id: 17,
@@ -429,7 +432,7 @@ export const projectTranslations = {
       liveLink: "https://www.figure.com/sandwich-generation/", //Todo: atualizar quando o projeto estiver no ar
       category: "professional",
       //images: ["/assets/pictures/Projects/SandGen-Figure.png"],
-      tags: ["Front-End", "Landing Page", "Dataviz"],
+      tags: ["Front-End", "Landing Page", "Dataviz", "GSAP"],
     },
   ],
   en: [
@@ -622,12 +625,15 @@ export const projectTranslations = {
       images: ["/assets/pictures/Projects/Odd-website-home.png", "/assets/pictures/Projects/Odd-website-work.png"],
       tags: ["Front-End", "Landing Page", "Svelte", "Glass Design"],
     },
-      {
+    {
       id: 16,
       slug: "procurando-cores-website",
       title: "Procurando Cores - Website",
       description: "A Landing page developed for Julia Santos from 'Procurando Cores', aiming to promote her work as an art teacher.",
       category: "professional",
+      liveLink: "https://procurandocores.com.br/",
+      images: ["/assets/pictures/Projects/JujuProcurandoCores-Home.png", "/assets/pictures/Projects/JujuProcurandoCores-Cursos.png"],
+      tags: ["Front-End", "Landing Page", "Svelte", "CMS", "Creativity", "Design"],
     },
     {
       id: 17,
@@ -637,7 +643,7 @@ export const projectTranslations = {
       liveLink: "https://www.figure.com/sandwich-generation/", //Todo: atualizar quando o projeto estiver no ar
       category: "professional",
       //images: ["/assets/pictures/Projects/SandGen-Figure.png"],
-      tags: ["Front-End", "Landing Page", "Dataviz"],
+    tags: ["Front-End", "Landing Page", "Dataviz", "Data Visualization", "GSAP"],
     },
   ],
 } as const;
