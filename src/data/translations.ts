@@ -103,6 +103,7 @@ export const experienceTranslations = {
       type: "Internship",
       description:
         "Liv Energy was born from the merger of two companies: Wattsfy and Sunrent, both operating in the renewable energy sector. I contributed to the technical development of Liv Energy's new platform, focusing on software solutions involving automation, OCR, artificial intelligence, API, and CRM integrations. I also supported the analysis and optimization of operational processes to improve integration, customer service, and system performance.",
+      projectSlugs: ["livenergy-website", "livenergy-landingpage"],
       images: [
         {
           src: "/assets/pictures/experience/LivEnergy.jpg",
@@ -385,7 +386,7 @@ export const projectTranslations = {
     },
     {
       id: 13,
-      slug: "liveenergy-website",
+      slug: "livenergy-website",
       title: "Liv Energy - Website",
       description: "Projeto desenvolvido na Liv Energy, com o objetivo de atualizar o criar o site para a nova empresa em Julho de 2025. Criei o site institucional da empresa com objetivo de apresentar a empresa que antes eram duas startups do setor de energia Sunrent e Wattsfy. O nome Liv Energy foi escolhido para representar a nova empresa que nasceu da fusão das duas startups, nome do qual eu tive a oportunidade de sugerir e foi o mais escolhido pelos clientes.",
       liveLink: "https://www.livenergy.com.br/",
@@ -398,6 +399,7 @@ export const projectTranslations = {
       slug: "livenergy-landingpage",
       title: "Liv Energy - Landing Page",
       description: "Projeto desenvolvido na Liv Energy. Criei uma landing page para apresentar captar novos leads e apresentar os serviços oferecidos.",
+      liveLink: "https://www.economizeenergia.com.br/",
       category: "professional",
       images: ["/assets/pictures/Projects/LivEnergy-LandingPage.png"],
       tags: ["React", "Next.js", "Front-End", "Landing Page", "IA", "OCR", "Automação"],
@@ -592,7 +594,7 @@ export const projectTranslations = {
     },
     {
       id: 13,
-      slug: "liveenergy-website",
+      slug: "livenergy-website",
       title: "Liv Energy - Website",
       description: "Project developed at Liv Energy, aimed at creating the website for the new company in July 2025. I created the company's institutional website to present the company, which was previously two startups in the energy sector: Sunrent and Wattsfy. The name Liv Energy was chosen to represent the new company that emerged from the merger of the two startups, a name that I had the opportunity to suggest and was the most chosen by clients.",
       liveLink: "https://www.livenergy.com.br/",
