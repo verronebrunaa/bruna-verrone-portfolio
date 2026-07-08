@@ -26,6 +26,11 @@ export default function ProjectClient({
     (tp) => tp.slug === project.slug
   );
 
+  const extraLinks =
+    translatedProject && "extraLinks" in translatedProject
+      ? translatedProject.extraLinks
+      : undefined;
+
   return (
     <div className="project-page flex-1">
       <div className="project-container">
@@ -74,6 +79,17 @@ export default function ProjectClient({
                 {t("projects.live")}
               </a>
             )}
+            {extraLinks?.map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link live"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         )}
       </div>

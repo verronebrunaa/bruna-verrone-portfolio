@@ -1,23 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { projectTranslations } from "@/data/translations";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Image from "next/image";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
   const { language } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const progressRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
 
   const projects = projectTranslations[language];
-  const featuredProjects = projects.slice(0, 8);
+  const featuredProjects = projects.slice(0, 3);
 
   const getCategoryLabel = (category: string) => {
     if (category === "personal") {
@@ -29,164 +30,185 @@ export default function Projects() {
     return language === "pt" ? "Profissional" : "Professional";
   };
 
-  const checkScroll = () => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    }
-  };
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 400;
-      scrollContainerRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      cardsRef.current.forEach((card, index) => {
-        if (card) {
-          gsap.from(card, {
+    const section = sectionRef.current;
+    const track = trackRef.current;
+    if (!section || !track) return;
+
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      const getDistance = () => track.scrollWidth - window.innerWidth;
+
+      if (getDistance() <= 0) return;
+
+      const tween = gsap.to(track, {
+        x: () => -getDistance(),
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: () => `+=${getDistance()}`,
+          pin: true,
+          scrub: 1,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+          onUpdate: (self) => {
+            if (progressRef.current) {
+              progressRef.current.style.width = `${self.progress * 100}%`;
+            }
+          },
+        },
+      });
+
+      cardsRef.current.forEach((card) => {
+        if (!card) return;
+        gsap.fromTo(
+          card,
+          { opacity: 0, scale: 0.9 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.6,
+            ease: "power3.out",
             scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top 80%",
+              trigger: card,
+              containerAnimation: tween,
+              start: "left 80%",
               toggleActions: "play none none reverse",
             },
-            opacity: 0,
-            x: 50,
+          }
+        );
+      });
+    });
+
+    mm.add("(max-width: 767px)", () => {
+      cardsRef.current.forEach((card, index) => {
+        if (!card) return;
+        gsap.fromTo(
+          card,
+          { opacity: 0, x: 50 },
+          {
+            opacity: 1,
+            x: 0,
             duration: 0.6,
             delay: index * 0.08,
             ease: "power3.out",
-          });
-        }
+            scrollTrigger: {
+              trigger: section,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
       });
-    }, sectionRef);
+    });
 
-    return () => ctx.revert();
+    ScrollTrigger.refresh();
+
+    return () => mm.revert();
   }, [language]);
 
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      checkScroll();
-      container.addEventListener("scroll", checkScroll);
-      return () => container.removeEventListener("scroll", checkScroll);
-    }
-  }, []);
-
   return (
-    <section ref={sectionRef} className="projects-horizontal-section">
-      <div className="projects-horizontal-wrapper">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="projects-horizontal-header"
-        >
-          <h2 className="section-title">
-            {language === "pt" ? "Meus Projetos" : "My Projects"}
-          </h2>
-        </motion.div>
+    <section ref={sectionRef} className="projects-pin-section">
+      <div className="projects-pin-header">
+        <h2 className="section-title">
+          {language === "pt" ? "Meus Projetos" : "My Projects"}
+        </h2>
+        <p className="projects-pin-hint">
+          {language === "pt" ? "Role para explorar" : "Scroll to explore"}
+        </p>
+        <div className="projects-progress">
+          <div className="projects-progress-fill" ref={progressRef}></div>
+        </div>
+      </div>
 
-        <div className="projects-scroll-wrapper">
-          {canScrollLeft && (
-            <button
-              onClick={() => scroll("left")}
-              className="scroll-button scroll-button-left"
-              aria-label="Scroll left"
+      <div className="projects-track" ref={trackRef}>
+        {featuredProjects.map((project, index) => (
+          <div key={project.id} className="project-slide">
+            <div
+              ref={(el) => {
+                cardsRef.current[index] = el;
+              }}
+              className="project-card"
             >
-              ←
-            </button>
-          )}
+              <Link
+                href={`/projects/${project.slug}`}
+                className="project-card-link"
+              >
+                {"images" in project &&
+                  project.images?.length &&
+                  project.images.length > 0 && (
+                    <div className="project-card-image-wrapper">
+                      <Image
+                        src={project.images[0]}
+                        alt={project.title}
+                        className="project-card-image"
+                        width={1080}
+                        height={850}
+                        style={{ objectFit: "cover" }}
+                        priority={index < 2}
+                      />
+                      <div className="project-card-overlay"></div>
+                    </div>
+                  )}
 
-          <div 
-            ref={scrollContainerRef} 
-            className="projects-horizontal-container"
-          >
-            <div className="projects-horizontal-track">
-              {featuredProjects.map((project, index) => (
-                <div
-                  key={project.id}
-                  ref={(el) => {
-                    cardsRef.current[index] = el;
-                  }}
-                  className="project-horizontal-card"
-                >
-                  <Link href={`/projects/${project.slug}`} className="project-card-link">
-                    {'images' in project && project.images?.length && project.images.length > 0 && (
-                      <div className="project-horizontal-image-wrapper">
-                        <Image
-                          src={project.images[0]}
-                          alt={project.title}
-                          className="project-horizontal-image"
-                          width={400}
-                          height={300}
-                          loading="lazy"
-                        />
-                        <div className="project-card-overlay"></div>
+                <div className="project-card-content">
+                  <h3 className="project-card-title">{project.title}</h3>
+
+                  <p className="project-card-description">
+                    {project.description}
+                  </p>
+
+                  {"tags" in project &&
+                    Array.isArray(project.tags) &&
+                    project.tags.length > 0 && (
+                      <div className="project-card-tags">
+                        {project.tags.map((tag: string) => (
+                          <span key={tag} className="project-tag">
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     )}
 
-                    <div className="project-horizontal-content">
-                      <h3 className="project-horizontal-title">{project.title}</h3>
+                  <div className="project-card-footer">
+                    {"category" in project && (
+                      <span className="project-category">
+                        {getCategoryLabel(project.category)}
+                      </span>
+                    )}
 
-                      <p className="project-horizontal-description">
-                        {project.description}
-                      </p>
-
-                      {"tags" in project && Array.isArray(project.tags) && project.tags.length > 0 && (
-                        <div className="project-card-tags">
-                          {project.tags.slice(0, 3).map((tag) => (
-                            <span key={tag} className="project-tag">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-
-                      <div className="project-horizontal-footer">
-                        {'category' in project && (
-                          <span className="project-category">
-                            {getCategoryLabel(project.category)}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-              
-              <div className="project-horizontal-card project-view-all-card">
-                <Link href="/projects" className="project-view-all-link">
-                  <div className="project-view-all-content">
-                    <h3 className="view-all-title">
-                      {language === "pt" ? "Ver Todos" : "View All"}
-                    </h3>
-                    <p className="view-all-count">
-                      {projects.length} {language === "pt" ? "projetos" : "projects"}
-                    </p>
-                    <span className="view-all-arrow">→</span>
+                    <span className="project-view-more">
+                      {language === "pt" ? "Ver mais →" : "View more →"}
+                    </span>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
           </div>
+        ))}
 
-          {canScrollRight && (
-            <button
-              onClick={() => scroll("right")}
-              className="scroll-button scroll-button-right"
-              aria-label="Scroll right"
-            >
-              →
-            </button>
-          )}
+        <div className="project-slide">
+          <div
+            ref={(el) => {
+              cardsRef.current[featuredProjects.length] = el;
+            }}
+            className="project-card project-view-all-card"
+          >
+            <Link href="/projects" className="project-view-all-link">
+              <div className="project-view-all-content">
+                <h3 className="view-all-title">
+                  {language === "pt" ? "Ver Todos" : "View All"}
+                </h3>
+                <p className="view-all-count">
+                  {projects.length}{" "}
+                  {language === "pt" ? "projetos" : "projects"}
+                </p>
+                <span className="view-all-arrow">→</span>
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

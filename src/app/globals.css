@@ -447,6 +447,56 @@ body {
   color: #444;
 }
 
+/* Badges de projetos dentro do card de experiência */
+.experience-projects {
+  margin-top: 1.5rem;
+}
+
+.experience-projects-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.experience-projects-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience-project-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #5b21b6;
+  background-color: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.experience-project-badge:hover {
+  background-color: rgba(124, 58, 237, 0.15);
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.2);
+  transform: translateY(-2px);
+}
+
+.experience-project-badge-arrow {
+  transition: transform 0.3s ease;
+}
+
+.experience-project-badge:hover .experience-project-badge-arrow {
+  transform: translateX(3px);
+}
+
 .carousel-wrapper {
   width: 400px;
   flex-shrink: 0;
@@ -654,6 +704,131 @@ body {
   max-width: 1100px;
   width: 100%;
   padding: 2rem;
+}
+
+/* Home - pinned horizontal projects section */
+.projects-pin-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: linear-gradient(to right, #faf5ff, #f0f9ff);
+}
+
+.projects-pin-header {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 5.5rem 20px 0;
+}
+
+.projects-pin-hint {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.projects-progress {
+  width: min(300px, 60vw);
+  height: 4px;
+  background: rgba(124, 58, 237, 0.15);
+  border-radius: 2px;
+  margin: 1.25rem auto 0;
+  overflow: hidden;
+}
+
+.projects-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #7c3aed, #9333ea);
+  border-radius: 2px;
+}
+
+.projects-track {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+  will-change: transform;
+}
+
+.project-slide {
+  width: 100vw;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 20px 3rem;
+}
+
+.project-slide .project-card {
+  width: min(900px, 92vw);
+  max-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-slide .project-view-all-card {
+  width: min(600px, 90vw);
+  min-height: 380px;
+  border-radius: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .projects-pin-section {
+    height: 100vh;
+  }
+
+  .project-slide .project-card-image-wrapper {
+    height: 22rem;
+  }
+
+  .project-slide .project-card-title {
+    font-size: 1.75rem;
+  }
+
+  .project-slide .project-card-description {
+    font-size: 1rem;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+  }
+}
+
+/* Mobile: native horizontal swipe with snap */
+@media (max-width: 767px) {
+  .projects-pin-section {
+    padding-bottom: 2rem;
+  }
+
+  .projects-pin-header {
+    padding-top: 3rem;
+  }
+
+  .projects-progress {
+    display: none;
+  }
+
+  .projects-track {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .project-slide {
+    width: 85vw;
+    scroll-snap-align: center;
+    padding: 0.5rem 0.5rem 1.5rem;
+  }
+
+  .project-slide .project-card {
+    width: 100%;
+  }
+
+  .project-slide .project-view-all-card {
+    min-height: 280px;
+  }
 }
 
 /* Project Filters */
@@ -1497,6 +1672,49 @@ body {
   color: #6b7280;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.project-category-odd {
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+/* Banner na página do projeto ligando à experiência na Odd */
+.project-odd-banner-wrapper {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.project-odd-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 9999px;
+  color: #5b21b6;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-odd-banner strong {
+  font-weight: 700;
+}
+
+.project-odd-banner:hover {
+  background: rgba(124, 58, 237, 0.15);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+  transform: translateY(-2px);
+}
+
+.project-odd-banner-arrow {
+  transition: transform 0.3s ease;
+}
+
+.project-odd-banner:hover .project-odd-banner-arrow {
+  transform: translateX(4px);
 }
 
 .project-view-more {

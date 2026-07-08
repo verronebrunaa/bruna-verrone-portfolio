@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { experienceTranslations } from "@/data/translations";
+import { experienceTranslations, projectTranslations } from "@/data/translations";
 
 interface ExperienceImage {
   src: string;
@@ -19,6 +20,7 @@ interface Experience {
   type: string;
   description: string;
   images?: ExperienceImage[];
+  projectSlugs?: string[];
 }
 
 export default function Experience() {
@@ -26,6 +28,7 @@ export default function Experience() {
   const experiences = experienceTranslations[
     language
   ] as unknown as Experience[];
+  const projects = projectTranslations[language];
   const [currentSlides, setCurrentSlides] = useState(experiences.map(() => 0));
 
   const nextSlide = (index: number) => {
@@ -79,6 +82,34 @@ export default function Experience() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   <p className="description">{exp.description}</p>
+
+                  {exp.projectSlugs && exp.projectSlugs.length > 0 && (
+                    <div className="experience-projects">
+                      <span className="experience-projects-label">
+                        {t("experience.projects")}
+                      </span>
+                      <div className="experience-projects-badges">
+                        {exp.projectSlugs.map((slug) => {
+                          const project = projects.find(
+                            (p) => p.slug === slug
+                          );
+                          if (!project) return null;
+                          return (
+                            <Link
+                              key={slug}
+                              href={`/projects/${slug}`}
+                              className="experience-project-badge"
+                            >
+                              {project.title}
+                              <span className="experience-project-badge-arrow">
+                                →
+                              </span>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
                 </motion.div>
 
                 {exp.images && exp.images.length > 0 && (

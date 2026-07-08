@@ -4,10 +4,11 @@ export const experienceTranslations = {
     {
       company: "Odd Data & Design Studio",
       period: "09/2025 - Atualmente",
-      position: "Estágiaria de Desenvolvimento",
+      position: "Desenvolvedora Full Stack",
       type: "PJ - Remoto",
       description:
-        "Atuo como desenvolvedora Full Stack na Odd Data & Design Studio, contribuindo para projetos de design e desenvolvimento de software.",
+        "Atuo como desenvolvedora Full Stack na Odd Data & Design Studio, desenvolvendo aplicações web e desenvolvimento de software.",
+      projectSlugs: ["odd-data-website", "sandgen-figure"],
     },
     {
       company: "Liv Energy | Wattsfy | Sunrent",
@@ -22,14 +23,16 @@ export const experienceTranslations = {
           alt: "Placas solares de uma usina da Liv Energy",
         },
       ],
+      projectSlugs: ["livenergy-website", "livenergy-landingpage"],
     },
     {
       company: "Codako | Grupo Amazonas",
       period: "05/2024 - 12/2024",
-      position: "Desenvolvedora Front-end",
+      position: "Desenvolvedora Front-end Júnior",
       type: "PJ - híbrido",
       description:
-        "A Codako é um projeto de Startup do Grupo Amazonas. Atuei como desenvolvedora front-end contribuindo para o desenvolvimento de soluções inovadoras e eficientes. Minha experiência inclui a criação de interfaces de usuário responsivas e intuitivas, utilizando tecnologias modernas como React e Next.js. Na Codako, participei da entrega de projetos como: Consulta de Placas, desenvolvimento de um CMS, site das Marcas e do Grupo Amazonas. Além disso, participei ativamente de reuniões de equipe e colaborei com a organização do início do projeto Codako.",
+        "A Codako é um projeto de Startup do Grupo Amazonas. Atuei como desenvolvedora front-end contribuindo para o desenvolvimento de soluções inovadoras e eficientes. Minha experiência inclui a criação de interfaces de usuário responsivas e intuitivas, utilizando tecnologias modernas como React e Next.js. Na Codako, participei da entrega de projetos como: Consulta de Placas, desenvolvimento de um CMS, site das Marcas e do institucional do Grupo Amazonas. Além disso, participei ativamente de reuniões de equipe e colaborei com a organização do início do projeto Codako.",
+      projectSlugs: ["grupo-amazonas-website", "codako-website"],
       images: [
         {
           src: "/assets/pictures/experience/Codako-AWS.jpg",
@@ -69,6 +72,12 @@ export const experienceTranslations = {
       position: "Estudante de Desenvolvimento Full Stack Java",
       type: "Bootcamp",
       description: "Participei de um bootcamp intensivo de 400 horas focado em desenvolvimento Full Stack com Java e tecnologias web modernas. O programa incluiu projetos práticos, metodologias ágeis e preparação para o mercado de trabalho.",
+      projectSlugs: [
+        "backend-blog-pessoal",
+        "frontend-bookgram",
+        "front-end-generation",
+        "java-estudos",
+      ],
       images: [
         { src: "/assets/pictures/experience/Generation.jpg", alt: "Generation Bootcamp" },
         { src: "/assets/pictures/experience/Generation-formatura.jpg", alt: "Generation Bootcamp Online Graduation" },
@@ -81,10 +90,11 @@ export const experienceTranslations = {
     {
       company: "Odd Data & Design Studio",
       period: "09/2025 - Present",
-      position: "Development Intern",
+      position: "Full Stack Developer",
       type: "Contract - Remote",
       description:
-        "I work as a Full Stack developer at Odd Data & Design Studio, contributing to design and software development projects.",
+        "I work as a Full Stack developer at Odd Data & Design Studio, developing web applications and software solutions.",
+      projectSlugs: ["odd-data-website", "sandgen-figure"],
     },
     {
       company: "Liv Energy | Wattsfy | Sunrent",
@@ -103,7 +113,7 @@ export const experienceTranslations = {
     {
       company: "Codako | Grupo Amazonas",
       period: "05/2024 - 12/2024",
-      position: "Front-end Developer",
+      position: "Junior Front-end Developer",
       type: "Contract - Hybrid",
       description:
         "Codako is a startup project by Grupo Amazonas. I worked as a front-end developer contributing to the development of innovative and efficient solutions. My experience includes creating responsive and intuitive user interfaces using modern technologies like React and Next.js. At Codako, I participated in delivering projects such as: License Plate Lookup, CMS development, Brand and Grupo Amazonas websites. Additionally, I actively participated in team meetings and collaborated on organizing the start of the Codako project.",
@@ -113,6 +123,7 @@ export const experienceTranslations = {
           alt: "Codako team at AWS 2024",
         },
       ],
+      projectSlugs: ["grupo-amazonas-website", "codako-website"],
     },
     {
       company: "Sumup Bank",
@@ -146,6 +157,12 @@ export const experienceTranslations = {
       position: "Full Stack Java Development Student",
       type: "Bootcamp",
       description: "I participated in an intensive 400-hour bootcamp focused on Full Stack development with Java and modern web technologies. The program included practical projects, agile methodologies, and job market preparation.",
+      projectSlugs: [
+        "backend-blog-pessoal",
+        "frontend-bookgram",
+        "front-end-generation",
+        "java-estudos",
+      ],
       images: [
         { src: "/assets/pictures/experience/Generation.jpg", alt: "Generation Bootcamp" },
         { src: "/assets/pictures/experience/Generation-formatura.jpg", alt: "Generation Bootcamp Online Graduation" },
@@ -322,11 +339,96 @@ export const projectTranslations = {
     },
     {
       id: 11,
+      slug: "grupo-amazonas-website",
+      title: "Grupo Amazonas - Sites e CMS",
+      description: "Projeto desenvolvido na Codako, startup do Grupo Amazonas. Ajudei na construção do novo site do grupo, com foco na venda de carros Zero KM e seminovos, e no desenvolvimento dos sites das montadoras Fiat, Ford, Jeep, Renault, Peugeot e Citroën, além do CMS que gerencia o conteúdo dos sites.",
+      liveLink: "https://grupoamazonas.com.br/",
+      extraLinks: [
+        {
+          url: "https://fiat.grupoamazonas.com.br/",
+          label: "Site Fiat - Grupo Amazonas",
+        },
+        {
+          url: "https://ford.grupoamazonas.com.br/",
+          label: "Site Ford - Grupo Amazonas",
+        },
+        {
+          url: "https://jeep.grupoamazonas.com.br/",
+          label: "Site Jeep - Grupo Amazonas",
+        },
+        {
+          url: "https://renault.grupoamazonas.com.br/",
+          label: "Site Renault - Grupo Amazonas",
+        },
+        {
+          url: "https://peugeot.grupoamazonas.com.br/",
+          label: "Site Peugeot - Grupo Amazonas",
+        },
+        {
+          url: "https://citroen.grupoamazonas.com.br/",
+          label: "Site Citroën - Grupo Amazonas",
+        },
+      ],
+      tags: ["React", "Next.js", "CMS", "Front-End"],
+      category: "professional",
+      images: ["/assets/pictures/Projects/GrupoAmazonas-Website.png", "/assets/pictures/Projects/GrupoAmazonas-ZeroKM.png"]
+    },
+    {
+      id: 12,
+      slug: "codako-website",
+      title: "Codako - Website",
+      description: "Projeto desenvolvido na Codako, startup do Grupo Amazonas. Ajudei na construção do site da startup, com foco em apresentar a empresa e seus serviços.",
+      liveLink: "https://codako.com.br/",
+      tags: ["React", "Next.js", "CMS", "Front-End"],
+      category: "professional",
+      images: ["/assets/pictures/Projects/Codako-Website.png"]
+    },
+    {
+      id: 13,
+      slug: "liveenergy-website",
+      title: "Liv Energy - Website",
+      description: "Projeto desenvolvido na Liv Energy, com o objetivo de atualizar o criar o site para a nova empresa em Julho de 2025. Criei o site institucional da empresa com objetivo de apresentar a empresa que antes eram duas startups do setor de energia Sunrent e Wattsfy. O nome Liv Energy foi escolhido para representar a nova empresa que nasceu da fusão das duas startups, nome do qual eu tive a oportunidade de sugerir e foi o mais escolhido pelos clientes.",
+      liveLink: "https://www.livenergy.com.br/",
+      category: "professional",
+      images: ["/assets/pictures/Projects/LivEnergy-Website.png", "/assets/pictures/Projects/LivEnergy-LandingPage.png"],
+      tags: ["React", "Next.js", "Front-End", "Landing Page", "IA", "OCR", "Automação"],
+    },
+    {
+      id: 14,
+      slug: "livenergy-landingpage",
+      title: "Liv Energy - Landing Page",
+      description: "Projeto desenvolvido na Liv Energy. Criei uma landing page para apresentar captar novos leads e apresentar os serviços oferecidos.",
+      category: "professional",
+      images: ["/assets/pictures/Projects/LivEnergy-LandingPage.png"],
+      tags: ["React", "Next.js", "Front-End", "Landing Page", "IA", "OCR", "Automação"],
+    },
+    {
+      id: 15,
+      slug: "odd-data-website",
+      title: "Odd Data & Design Studio - Website",
+      description: "Projeto desenvolvido dentro da Odd Data & Design Studio, com o objetivo de atualizar o website para a empresa Odd Data & Design Studio em Agosto de 2025. O projeto é uma Landing Page com objetivo de apresentar a empresa e seus serviços.",
+      liveLink: "https://odd.studio/",
+      category: "professional",
+      images: ["/assets/pictures/Projects/Odd-website-home.png", "/assets/pictures/Projects/Odd-website-work.png"],
+      tags: ["Front-End", "Landing Page", "Svelte", "Glass Design"],
+    },
+    {
+      id: 16,
       slug: "procurando-cores-website",
       title: "Procurando Cores - Website",
       description: "Uma Landing page desenvolvida para a Julia Santos do 'Procurando Cores', com o objetivo de divulgar seu trabalho como professora de artes.",
       category: "professional",
-    }
+    },
+    {
+      id: 17,
+      slug: "sandgen-figure",
+      title: "Figure - Sandwich Generation",
+      description: "Projeto desevolvido dentro da Odd Data & Design Studio, com o objetivo de criar uma landing page para a empresa Figure em Julho de 2026. O projeto é uma Dataviz com objetivo de apresentar a realidade da Sandwich Generation.",
+      liveLink: "https://www.figure.com/sandwich-generation/", //Todo: atualizar quando o projeto estiver no ar
+      category: "professional",
+      //images: ["/assets/pictures/Projects/SandGen-Figure.png"],
+      tags: ["Front-End", "Landing Page", "Dataviz"],
+    },
   ],
   en: [
     {
@@ -444,11 +546,97 @@ export const projectTranslations = {
     },
     {
       id: 11,
+      slug: "grupo-amazonas-website",
+      title: "Grupo Amazonas - Websites and CMS",
+      description: "Project developed at Codako, a Grupo Amazonas startup. I helped build the group's new website, focused on selling brand-new (0km) and pre-owned cars, and develop the websites for the car brands Fiat, Ford, Jeep, Renault, Peugeot, and Citroën, as well as the CMS that manages the sites' content.",
+      liveLink: "https://grupoamazonas.com.br/",
+      extraLinks: [
+        {
+          url: "https://fiat.grupoamazonas.com.br/",
+          label: "Fiat Website - Grupo Amazonas",
+        },
+        {
+          url: "https://ford.grupoamazonas.com.br/",
+          label: "Ford Website - Grupo Amazonas",
+        },
+        {
+          url: "https://jeep.grupoamazonas.com.br/",
+          label: "Jeep Website - Grupo Amazonas",
+        },
+        {
+          url: "https://renault.grupoamazonas.com.br/",
+          label: "Renault Website - Grupo Amazonas",
+        },
+        {
+          url: "https://peugeot.grupoamazonas.com.br/",
+          label: "Peugeot Website - Grupo Amazonas",
+        },
+        {
+          url: "https://citroen.grupoamazonas.com.br/",
+          label: "Citroën Website - Grupo Amazonas",
+        },
+      ],
+      tags: ["React", "Next.js", "CMS", "Front-End"],
+      category: "professional",
+      images: ["/assets/pictures/Projects/GrupoAmazonas-Website.png", "/assets/pictures/Projects/GrupoAmazonas-ZeroKM.png"],
+    },
+    {
+      id: 12,
+      slug: "codako-website",
+      title: "Codako - Website",
+      description: "Project developed at Codako, a Grupo Amazonas startup. I helped build the startup's website, focused on presenting the company and its services.",
+      liveLink: "https://codako.com.br/",
+      tags: ["React", "Next.js", "CMS", "Front-End"],
+      category: "professional",
+      images: ["/assets/pictures/Projects/Codako-Website.png"],
+    },
+    {
+      id: 13,
+      slug: "liveenergy-website",
+      title: "Liv Energy - Website",
+      description: "Project developed at Liv Energy, aimed at creating the website for the new company in July 2025. I created the company's institutional website to present the company, which was previously two startups in the energy sector: Sunrent and Wattsfy. The name Liv Energy was chosen to represent the new company that emerged from the merger of the two startups, a name that I had the opportunity to suggest and was the most chosen by clients.",
+      liveLink: "https://www.livenergy.com.br/",
+      category: "professional",
+      images: ["/assets/pictures/Projects/LivEnergy-Website.png", "/assets/pictures/Projects/LivEnergy-Cadastro.png"],
+      tags: ["React", "Next.js", "Front-End", "Landing Page", "AI", "OCR", "Automation"],
+    },
+    {
+      id: 14,
+      slug: "livenergy-landingpage",
+      title: "Liv Energy - Landing Page: Save Energy",
+      description: "Landing page developed for Liv Energy, aiming to promote the company's services and capture leads.",
+      liveLink: "https://www.economizeenergia.com.br/",
+      category: "professional",
+      images: ["/assets/pictures/Projects/LivEnergy-LandingPage.png"],
+      tags: ["React", "Next.js", "Front-End", "Landing Page", "AI", "OCR", "Automation"],
+    },
+    {
+      id: 15,
+      slug: "odd-data-website",
+      title: "Odd Data & Design Studio - Website",
+      description: "Project developed within Odd Data & Design Studio, aiming to update the website for the company Odd Data & Design Studio in August 2025. The project is a Landing Page with the goal of presenting the company and its services.",
+      liveLink: "https://odd.studio/",
+      category: "professional",
+      images: ["/assets/pictures/Projects/Odd-website-home.png", "/assets/pictures/Projects/Odd-website-work.png"],
+      tags: ["Front-End", "Landing Page", "Svelte", "Glass Design"],
+    },
+      {
+      id: 16,
       slug: "procurando-cores-website",
       title: "Procurando Cores - Website",
       description: "A Landing page developed for Julia Santos from 'Procurando Cores', aiming to promote her work as an art teacher.",
       category: "professional",
-    }
+    },
+    {
+      id: 17,
+      slug: "sandgen-figure",
+      title: "Figure - Sandwich Generation",
+      description: "Project developed within Odd Data & Design Studio, aiming to create a landing page for the company Figure in July 2026. The project is a Dataviz with the goal of presenting the reality of the Sandwich Generation.",
+      liveLink: "https://www.figure.com/sandwich-generation/", //Todo: atualizar quando o projeto estiver no ar
+      category: "professional",
+      //images: ["/assets/pictures/Projects/SandGen-Figure.png"],
+      tags: ["Front-End", "Landing Page", "Dataviz"],
+    },
   ],
 } as const;
 
@@ -471,6 +659,7 @@ export const generalTranslations = {
     'about.title': 'Sobre Mim',
     'about.description': 'Sou uma pessoa curiosa, amo ler, aprender coisas novas e compartilhar experiências. Para além do trabalho, gosto de viajar, explorar novas culturas e me conectar com pessoas. Amo ir a shows, ouvir música e cozinhar. As vezes faço freelas para o ',
     'experience.title': 'Experiência Profissional',
+    'experience.projects': 'Projetos desenvolvidos',
     'tech.title': 'Tecnologias e Ferramentas que utilizo',
     'tech.languages': 'Linguagens',
     'tech.frontend': 'Frontend',
@@ -484,6 +673,8 @@ export const generalTranslations = {
     'projects.filter.personal': 'Pessoais',
     'projects.filter.academic': 'Acadêmicos',
     'projects.filter.professional': 'Profissionais',
+    'projects.filter.odd': 'Odd Data & Design Studio',
+    'projects.oddBadge': 'Desenvolvido na',
     'projects.noProjects': 'Nenhum projeto encontrado para esta categoria.',
     'news.title': 'Notícias e Publicações',
     'courses.title': 'Cursos e Certificações',
@@ -518,6 +709,7 @@ export const generalTranslations = {
     'about.title': 'About Me',
     'about.description': 'I am a curious person, I love reading, learning new things and sharing experiences. Beyond work, I like to travel, explore new cultures and connect with people. I love going to concerts, listening to music and cooking. Sometimes I do freelance work for ',
     'experience.title': 'Professional Experience',
+    'experience.projects': 'Projects developed',
     'tech.title': 'Technologies and Tools I Use',
     'tech.languages': 'Languages',
     'tech.frontend': 'Frontend',
@@ -531,6 +723,8 @@ export const generalTranslations = {
     'projects.filter.personal': 'Personal',
     'projects.filter.academic': 'Academic',
     'projects.filter.professional': 'Professional',
+    'projects.filter.odd': 'Odd Studio',
+    'projects.oddBadge': 'Developed at',
     'projects.noProjects': 'No projects found for this category.',
     'news.title': 'News and Publications',
     'courses.title': 'Courses and Certifications',
