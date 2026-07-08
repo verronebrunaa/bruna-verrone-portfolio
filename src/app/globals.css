@@ -6,6 +6,12 @@
   --accent-color: #7c3aed;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -752,7 +758,8 @@ body {
 }
 
 .project-slide {
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -809,11 +816,10 @@ body {
   }
 
   .projects-track {
-    overflow-x: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
-    gap: 1rem;
-    padding: 1rem 0;
+    gap: 0.5rem;
   }
 
   .project-slide {

@@ -147,8 +147,8 @@ export default function Projects() {
                         src={project.images[0]}
                         alt={project.title}
                         className="project-card-image"
-                        width={1080}
-                        height={850}
+                        width={500}
+                        height={450}
                         style={{ objectFit: "cover" }}
                         priority={index < 2}
                       />
