@@ -3,7 +3,7 @@ export const experienceTranslations = {
   pt: [
     {
       company: "Odd Data & Design Studio",
-      period: "09/2025 - Atualmente",
+      period: "08/2025 - Atualmente",
       position: "Desenvolvedora Full Stack",
       type: "PJ - Remoto",
       description:
@@ -89,7 +89,7 @@ export const experienceTranslations = {
   en: [
     {
       company: "Odd Data & Design Studio",
-      period: "09/2025 - Present",
+      period: "08/2025 - Present",
       position: "Full Stack Developer",
       type: "Contract - Remote",
       description:
@@ -424,16 +424,16 @@ export const projectTranslations = {
       images: ["/assets/pictures/Projects/JujuProcurandoCores-Home.png", "/assets/pictures/Projects/JujuProcurandoCores-Cursos.png"],
       tags: ["Front-End", "Landing Page", "Svelte", "CMS", "Criatividade", "Design"],
     },
-    {
+    /*{
       id: 17,
       slug: "sandgen-figure",
       title: "Figure - Sandwich Generation",
       description: "Projeto desevolvido dentro da Odd Data & Design Studio, com o objetivo de criar uma landing page para a empresa Figure em Julho de 2026. O projeto é uma Dataviz com objetivo de apresentar a realidade da Sandwich Generation.",
-      liveLink: "https://www.figure.com/sandwich-generation/", //Todo: atualizar quando o projeto estiver no ar
+      liveLink: "https://www.figure.com/sandwich-generation/", Todo: atualizar quando o projeto estiver no ar
       category: "professional",
       //images: ["/assets/pictures/Projects/SandGen-Figure.png"],
       tags: ["Front-End", "Landing Page", "Dataviz", "GSAP"],
-    },
+    },*/
   ],
   en: [
     {
@@ -635,7 +635,7 @@ export const projectTranslations = {
       images: ["/assets/pictures/Projects/JujuProcurandoCores-Home.png", "/assets/pictures/Projects/JujuProcurandoCores-Cursos.png"],
       tags: ["Front-End", "Landing Page", "Svelte", "CMS", "Creativity", "Design"],
     },
-    {
+    /*{
       id: 17,
       slug: "sandgen-figure",
       title: "Figure - Sandwich Generation",
@@ -644,7 +644,7 @@ export const projectTranslations = {
       category: "professional",
       //images: ["/assets/pictures/Projects/SandGen-Figure.png"],
     tags: ["Front-End", "Landing Page", "Dataviz", "Data Visualization", "GSAP"],
-    },
+    },*/
   ],
 } as const;
 

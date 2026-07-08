@@ -47,24 +47,32 @@ export default function ProjectsPage() {
   ];
 
   useEffect(() => {
+    cardsRef.current = cardsRef.current.slice(0, filteredProjects.length);
+
     const ctx = gsap.context(() => {
       cardsRef.current.forEach((card, index) => {
         if (card) {
-          gsap.from(card, {
-            scrollTrigger: {
-              trigger: card,
-              start: "top 85%",
-              toggleActions: "play none none reverse",
-            },
-            opacity: 0,
-            y: 60,
-            duration: 0.8,
-            delay: index * 0.05,
-            ease: "power3.out",
-          });
+          gsap.fromTo(
+            card,
+            { opacity: 0, y: 60 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              delay: index * 0.05,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
         }
       });
     }, sectionRef);
+
+    ScrollTrigger.refresh();
 
     return () => ctx.revert();
   }, [filteredProjects]);
