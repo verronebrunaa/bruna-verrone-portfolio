@@ -6,7 +6,6 @@ import { projectTranslations } from "@/data/translations";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,16 +21,6 @@ export default function Projects() {
     ...projects.filter((p) => p.category === "professional"),
     ...projects.filter((p) => p.category !== "professional"),
   ].slice(0, 3);
-
-  const getCategoryLabel = (category: string) => {
-    if (category === "personal") {
-      return language === "pt" ? "Pessoal" : "Personal";
-    }
-    if (category === "academic") {
-      return language === "pt" ? "Acadêmico" : "Academic";
-    }
-    return language === "pt" ? "Profissional" : "Professional";
-  };
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -80,7 +69,7 @@ export default function Projects() {
               start: "left 80%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       });
     });
@@ -99,10 +88,10 @@ export default function Projects() {
             ease: "power3.out",
             scrollTrigger: {
               trigger: section,
-              start: "top 80%",
+              start: "top 20%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       });
     });
@@ -118,79 +107,46 @@ export default function Projects() {
         <h2 className="section-title">
           {language === "pt" ? "Meus Projetos" : "My Projects"}
         </h2>
-        <p className="projects-pin-hint">
-          {language === "pt" ? "Role para explorar" : "Scroll to explore"}
-        </p>
-        <div className="projects-progress">
-          <div className="projects-progress-fill" ref={progressRef}></div>
-        </div>
       </div>
 
       <div className="projects-track" ref={trackRef}>
-        {featuredProjects.map((project, index) => (
-          <div key={project.id} className="project-slide">
-            <div
-              ref={(el) => {
-                cardsRef.current[index] = el;
-              }}
-              className="project-card"
-            >
-              <Link
-                href={`/projects/${project.slug}`}
-                className="project-card-link"
+        {featuredProjects.map((project, index) => {
+          const featuredImage =
+            "images" in project &&
+            Array.isArray(project.images) &&
+            project.images.length > 0
+              ? project.images[0]
+              : null;
+
+          return (
+            <div key={project.id} className="project-slide">
+              <div
+                ref={(el) => {
+                  cardsRef.current[index] = el;
+                }}
+                className="project-card project-feature-card"
               >
-                {"images" in project &&
-                  project.images?.length &&
-                  project.images.length > 0 && (
-                    <div className="project-card-image-wrapper">
-                      <Image
-                        src={project.images[0]}
-                        alt={project.title}
-                        className="project-card-image"
-                        width={500}
-                        height={450}
-                        style={{ objectFit: "cover" }}
-                        priority={index < 2}
-                      />
-                      <div className="project-card-overlay"></div>
-                    </div>
-                  )}
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="project-card-link project-card-link--featured"
+                  style={
+                    featuredImage
+                      ? { backgroundImage: `url(${featuredImage})` }
+                      : undefined
+                  }
+                >
+                  <div className="project-card-content project-card-content--featured">
+                    <h3 className="project-card-title">{project.title}</h3>
 
-                <div className="project-card-content">
-                  <h3 className="project-card-title">{project.title}</h3>
-
-                  <p className="project-card-description">
-                    {project.description}
-                  </p>
-
-                  {"tags" in project &&
-                    Array.isArray(project.tags) &&
-                    project.tags.length > 0 && (
-                      <div className="project-card-tags">
-                        {project.tags.map((tag: string) => (
-                          <span key={tag} className="project-tag">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                  <div className="project-card-footer">
-                    {"category" in project && (
-                      <span className="project-category">
-                        {getCategoryLabel(project.category)}
-                      </span>
-                    )}
-
-                    <span className="project-view-more">
+                    <span className="project-view-more project-view-more--button">
                       {language === "pt" ? "Ver mais →" : "View more →"}
                     </span>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
 
         <div className="project-slide">
           <div
