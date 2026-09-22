@@ -424,16 +424,20 @@ export const projectTranslations = {
       images: ["/assets/pictures/Projects/JujuProcurandoCores-Home.png", "/assets/pictures/Projects/JujuProcurandoCores-Cursos.png"],
       tags: ["Front-End", "Landing Page", "Svelte", "CMS", "Criatividade", "Design"],
     },
-    /*{
+    {
       id: 17,
       slug: "sandgen-figure",
       title: "Figure - Sandwich Generation",
-      description: "Projeto desevolvido dentro da Odd Data & Design Studio, com o objetivo de criar uma landing page para a empresa Figure em Julho de 2026. O projeto é uma Dataviz com objetivo de apresentar a realidade da Sandwich Generation.",
-      liveLink: "https://www.figure.com/sandwich-generation/", Todo: atualizar quando o projeto estiver no ar
+      description: "Projeto desenvolvido dentro da Odd Data & Design Studio, com o objetivo de criar uma landing page para a empresa Figure. O projeto é uma Dataviz com objetivo de apresentar a realidade financeira da Sandwich Generation.",
+      liveLink: "https://www.figure.com/financial-reality-of-sandwich-generation-borrowers/",
       category: "professional",
-      //images: ["/assets/pictures/Projects/SandGen-Figure.png"],
-      tags: ["Front-End", "Landing Page", "Dataviz", "GSAP"],
-    },*/
+      images: [
+        "/assets/pictures/Projects/SandGen-Figure-Dominoes.png",
+        "/assets/pictures/Projects/SandGen-Figure-Mortgage.png",
+        "/assets/pictures/Projects/SandGen-Figure-Dependable.png",
+      ],
+      tags: ["Front-End", "Landing Page", "Dataviz", "Data Visualization", "GSAP"],
+    },
   ],
   en: [
     {
@@ -635,16 +639,20 @@ export const projectTranslations = {
       images: ["/assets/pictures/Projects/JujuProcurandoCores-Home.png", "/assets/pictures/Projects/JujuProcurandoCores-Cursos.png"],
       tags: ["Front-End", "Landing Page", "Svelte", "CMS", "Creativity", "Design"],
     },
-    /*{
+    {
       id: 17,
       slug: "sandgen-figure",
       title: "Figure - Sandwich Generation",
-      description: "Project developed within Odd Data & Design Studio, aiming to create a landing page for the company Figure in July 2026. The project is a Dataviz with the goal of presenting the reality of the Sandwich Generation.",
-      liveLink: "https://www.figure.com/sandwich-generation/", //Todo: atualizar quando o projeto estiver no ar
+      description: "Project developed within Odd Data & Design Studio, aiming to create a landing page for the company Figure. The project is a Dataviz with the goal of presenting the financial reality of the Sandwich Generation.",
+      liveLink: "https://www.figure.com/financial-reality-of-sandwich-generation-borrowers/",
       category: "professional",
-      //images: ["/assets/pictures/Projects/SandGen-Figure.png"],
-    tags: ["Front-End", "Landing Page", "Dataviz", "Data Visualization", "GSAP"],
-    },*/
+      images: [
+        "/assets/pictures/Projects/SandGen-Figure-Dominoes.png",
+        "/assets/pictures/Projects/SandGen-Figure-Mortgage.png",
+        "/assets/pictures/Projects/SandGen-Figure-Dependable.png",
+      ],
+      tags: ["Front-End", "Landing Page", "Dataviz", "Data Visualization", "GSAP"],
+    },
   ],
 } as const;
 
